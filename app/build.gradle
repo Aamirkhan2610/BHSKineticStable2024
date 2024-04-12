@@ -1,0 +1,152 @@
+
+apply plugin: 'com.android.application'
+// this line needs to be at bottom else it gives error of version conflict
+apply plugin: 'com.google.gms.google-services'
+
+ext {
+    PUBLISH_VERSION = "37.0"
+    PUBLISH_VERSION_CODE = 37
+}
+
+/*versionCode 35
+versionName "35.0"*/
+android {
+    compileSdk 34
+
+    useLibrary 'org.apache.http.legacy'
+    namespace 'bhskinetic.idee.com.bhskinetic_new'
+
+
+    defaultConfig {
+        applicationId "bhskinetic.idee.com.bhskinetic_new"
+        minSdk 21
+        versionCode 39
+        versionName "39.0"
+        targetSdk 33
+        multiDexEnabled true
+        buildConfigField "String", "BUILD_VERSION", "\"${project.PUBLISH_VERSION}\""
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+}
+
+/*configurations.all {
+    resolutionStrategy {
+        force 'com.android.support:support-v4:27.1.0'
+    }}*/
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'org.jetbrains:annotations:23.0.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    //  implementation "com.android.support:appcompat-v7:${project.Mesibo_supportLibVersion}"  //Commented
+    //implementation "com.android.support:support-v4:${project.Mesibo_supportLibVersion}"    //Commented
+    // implementation "com.android.support:recyclerview-v7:${project.Mesibo_supportLibVersion}" //Commented
+
+
+    implementation "com.google.firebase:firebase-messaging:18.0.0"
+
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
+    implementation "androidx.fragment:fragment:1.2.5"
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+
+    //Bhs Kinetic
+    implementation 'com.google.firebase:firebase-crash:9.2.0'
+    implementation 'com.android.volley:volley:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.kyanogen.signatureview:signature-view:1.0'
+    //  implementation 'com.wdullaer:materialdatetimepicker:3.1.3' //ERROR
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.1'
+    implementation 'org.apache.httpcomponents:httpclient:4.5'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'gun0912.ted:tedpermission:2.1.0'
+
+
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.ceryle:FitGridView:v1.0.5'
+    implementation 'com.kyanogen.signatureview:signature-view:1.2'
+    implementation 'id.zelory:compressor:2.1.0'
+    //implementation 'com.google.android.material:material:1.1.0-alpha06' //ERROR
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+    implementation 'com.intuit.sdp:sdp-android:1.0.4'
+
+    implementation 'com.intuit.ssp:ssp-android:1.0.4'
+    implementation 'com.squareup.picasso:picasso:2.5.0'
+    implementation 'com.karumi:dexter:4.2.0'
+    implementation 'com.github.sd6352051:android-image-picker:v1.0.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.kyanogen.signatureview:signature-view:1.0'
+    implementation 'com.github.AmrDeveloper.ReactButton:reactbutton:1.0.7'
+    implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation 'com.thoughtbot:expandablerecyclerview:1.4'
+    implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+
+    def emojiViewVersion = "1.5.2"
+    def emojiViewProvider = "AppleProvider"
+
+    implementation "io.github.aghajari:AXEmojiView:$emojiViewVersion"
+    implementation "io.github.aghajari:AXEmojiView-$emojiViewProvider:$emojiViewVersion"
+    implementation('org.apache.httpcomponents:httpmime:4.3.6') {
+        exclude module: 'httpclient'
+    }
+
+}
+
+
+

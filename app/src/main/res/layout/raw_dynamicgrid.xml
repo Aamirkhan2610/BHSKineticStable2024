@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/dim_dashboard_main_indicator"
+        android:layout_height="@dimen/dim_dashboard_main_indicator"
+        android:background="@drawable/ic_grid">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_icon"
+                android:layout_width="40dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/dim_normal_view_padding_dashboard"
+                android:src="@drawable/ic_access_denied" />
+
+            <ImageView
+                android:id="@+id/img_icon_ceva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/dim_gridelement_textsize"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_normal_view_margin"
+        android:orientation="vertical"></LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_notificationcounter"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:text=""
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_gravity="right"
+            android:background="@drawable/rounded_white"></TextView>
+
+    </FrameLayout>
+</LinearLayout>

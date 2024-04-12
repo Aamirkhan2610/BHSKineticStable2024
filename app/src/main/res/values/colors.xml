@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="myPrimaryColor">#ff00868b</color>
+    <color name="myPrimaryDarkColor">#1565c0</color>
+    <color name="myPrimaryLightColor">#42a5f5</color>
+    <color name="myAccentColor">#2196f3</color>
+    <color name="black">#000000</color>
+
+    <color name="showMeessageBG">#80000000</color>
+    <color name="overlaySelection">#40000000</color>
+    <color name="grey">#FFFFFF</color>
+    <color name="dialogueBackground">#8f000000</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="myWindowBackground">#FFFFFF</color>
+    <color name="myTextPrimaryColor">#212121</color>
+    <!-- <color name="phone_verification_background">@color/gray</color> -->
+
+
+    <!--reds-->
+
+    <!-- pinks -->
+
+    <!-- purples -->
+
+    <!-- deep purples -->
+
+    <!-- indigo -->
+
+    <!--blue-->
+
+    <!-- light blue-->
+
+    <!-- cyan -->
+
+    <!-- teal -->
+    <color name="md_teal_700">#00796B</color>
+
+    <!-- green -->
+    <color name="md_green_900">#1B5E20</color>
+
+    <!--light green-->
+
+    <!-- lime-->
+
+    <!--yellow -->
+
+    <!--amber-->
+
+    <!--orange-->
+    <color name="md_orange_500">#FF9800</color>
+    <color name="md_orange_900">#E65100</color>
+
+    <!--deep orange-->
+
+    <!--brown -->
+
+    <!--grey-->
+    <color name="md_grey_300">#E0E0E0</color>
+    <color name="md_grey_400">#BDBDBD</color>
+    <color name="md_grey_500">#9E9E9E</color>
+    <color name="md_grey_600">#757575</color>
+    <color name="md_grey_700">#616161</color>
+    <color name="md_white_1000">#ffffff</color>
+
+    <!--blue grey-->
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorRed">#E72824</color>
+    <color name="colorButtonText">#FFFFFF</color>
+    <color name="colorEditTextBackground">#FFFFFF</color>
+    <color name="colorTextView">#FFFFFF</color>
+    <!-- <color name="colorLightOrange">#F36C2A</color>-->
+    <color name="colorLightOrange">#F5590F</color>
+    <color name="colorTextJobList">#000000</color>
+    <color name="colorJobList">#F9EFE3</color>
+    <color name="colorGreen">#1FC352</color>
+    <color name="colorCircle">#8ACDFD</color>
+    <color name="colorMovieRed">#D4241E</color>
+    <color name="colorMovieGreen">#00F02C</color>
+    <color name="colorMovieBlue">#F36C2A</color>
+    <color name="colorBlue">#272265</color>
+    <color name="rec_viewHolder">#969696</color>
+    <color name="clr_black">#000000</color>
+    <color name="clr_toolbar">#CDCDCD</color>
+    <color name="colorYello">#fff44f</color>
+    <color name="colorAppBg">#DCDCDC</color>
+    <color name="clr_tv_address">#565656</color>
+    <color name="clr_bgd_main">#BBBAC0</color>
+    <color name="clr_bottom_line">#CDCDCD</color>
+    <color name="clr_bgd_btn">#DCDFE6</color>
+    <color name="clr_rec_viewHolder">#969696</color>
+    <color name="clr_white">#ffffff</color>
+    <!-- Mobile-->
+    <color name="colorOrange">#F5590F</color>
+    <color name="colorgridBg">#FDE9E0</color>
+</resources>

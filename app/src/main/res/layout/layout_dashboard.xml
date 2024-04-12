@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <View
+        android:id="@+id/view_div_one"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_view_div_height"
+        android:layout_below="@+id/layout_top"></View>
+
+    <include
+        android:id="@+id/header_top_dashboard"
+        layout="@layout/layout_header_dashboard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_div_one" />
+
+    <RelativeLayout
+        android:id="@+id/layout_jobstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_top_dashboard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:background="@color/colorgridBg"
+        android:orientation="horizontal"
+        android:padding="@dimen/dim_normal_view_padding">
+
+        <!-- Total Jobs-->
+        <RelativeLayout
+            android:id="@+id/rel_total_job"
+            android:layout_width="@dimen/dim_dashboard_main_indicator"
+            android:layout_height="@dimen/dim_dashboard_main_indicator"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="@dimen/dim_square_margin"
+            android:background="@drawable/ic_indicator">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dim_mobile_img"
+                    android:layout_height="@dimen/dim_mobile_img"
+                    android:padding="@dimen/dim_normal_view_padding_dashboard"
+                    android:src="@drawable/ic_total_job" />
+
+                <TextView
+                    android:id="@+id/tv_totaljob"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Completed Jobs-->
+        <RelativeLayout
+            android:id="@+id/rel_completed_job"
+            android:layout_width="@dimen/dim_dashboard_main_indicator"
+            android:layout_height="@dimen/dim_dashboard_main_indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_indicator">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dim_mobile_img"
+                    android:layout_height="@dimen/dim_mobile_img"
+                    android:padding="@dimen/dim_normal_view_padding_dashboard"
+                    android:src="@drawable/ic_completed_job" />
+
+                <TextView
+                    android:id="@+id/tv_completedjob"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Pending Jobs-->
+        <RelativeLayout
+            android:id="@+id/rel_pending_job"
+            android:layout_width="@dimen/dim_dashboard_main_indicator"
+            android:layout_height="@dimen/dim_dashboard_main_indicator"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dim_square_margin"
+            android:background="@drawable/ic_indicator">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dim_mobile_img"
+                    android:layout_height="@dimen/dim_mobile_img"
+                    android:padding="@dimen/dim_normal_view_padding_dashboard"
+                    android:src="@drawable/ic_pending_job" />
+
+                <TextView
+                    android:id="@+id/tv_pendingjob"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grid_dynamicgrid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_jobstatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:background="@color/colorgridBg"
+        android:cacheColorHint="@android:color/transparent"
+        android:numColumns="3"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:verticalSpacing="@dimen/dim_normal_view_margin"
+        android:horizontalSpacing="30dp"/>
+</RelativeLayout>

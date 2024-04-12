@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_request_leave"
+            android:layout_width="@dimen/edt_width"
+            android:layout_height="@dimen/height_request_button"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:background="@drawable/circularbutton_orange"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_request_leave"
+            android:textSize="@dimen/dim_normal_view_margin"
+            android:textColor="@color/colorButtonText"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_request_maintanance"
+            android:layout_width="@dimen/edt_width"
+            android:layout_height="@dimen/height_request_button"
+            android:layout_gravity="center"
+            android:textSize="@dimen/dim_normal_view_margin"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:background="@drawable/circularbutton_orange"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_request_maintanance"
+            android:textColor="@color/colorButtonText"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

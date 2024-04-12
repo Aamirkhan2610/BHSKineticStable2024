@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorLightOrange"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/rel_button"
+            android:fontFamily="serif"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:id="@+id/rel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_view_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_view_image" />
+            <ImageView
+                android:id="@+id/img_download"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_download" />
+
+            <ImageView
+                android:id="@+id/img_upload"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_upload" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_sent_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/ic_assistance"
+            android:drawablePadding="10dp"
+            android:fontFamily="serif"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_sent_by"
+            android:drawableLeft="@drawable/ic_time"
+            android:drawablePadding="10dp"
+            android:fontFamily="serif"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:background="@drawable/bg_intransist"
+        android:fontFamily="serif"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:text=""
+        android:textColor="@color/colorOrange"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+

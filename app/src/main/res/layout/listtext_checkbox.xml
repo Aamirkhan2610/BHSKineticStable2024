@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rel_main"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dim_normal_view_margin"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:layout_toLeftOf="@+id/img_select_worksite"
+        android:fontFamily="serif"
+        android:gravity="center|left"
+        android:text=""
+        android:textColor="@color/colorTextView"
+        android:textSize="@dimen/dim_bigtext"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/img_select_worksite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:src="@drawable/ic_chb_selected"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:background="@color/colorBlue"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:text="Submit"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/colorButtonText"
+        android:textSize="@dimen/dim_bigtext"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

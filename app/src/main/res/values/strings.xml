@@ -1,0 +1,217 @@
+<resources tools:ignore="ExtraTranslation" xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="menu_calllogs">Call Logs</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="FACEBOOK_APP_ID">783452565354512</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">e30be3170ec9dadb1e886b02d91176af</string>
+    <!-- Get your own google API key from
+         https://developers.google.com/maps/documentation/android-sdk/signup
+          -->
+    <string name="GOOGLE_MAP_KEY">GET YOUR KEY</string>
+
+    <!-- General-->
+    <string name="app_name">BHS Kinetic</string>
+
+    <!-- Edit Text-->
+    <string name="edt_hint_driverId">DRIVER ID/MEMBER ID</string>
+    <string name="edt_hint_remark">ENTER REMARK</string>
+    <string name="edt_hint_cost">ENTER COST</string>
+    <string name="edt_hint_trip_number">NUMBER OF TRIP</string>
+    <string name="edt_hint_tracking_number">TRACKING NUMBER</string>
+    <string name="edt_hint_message">WRITE MESSAGE</string>
+    <string name="edt_hint_customer_name">CUSTOMER NAME</string>
+
+    <!-- Button-->
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_clear_notification">CLEAR NOTIFICATION</string>
+    <string name="btn_moviesheet">MOVIE SHEET</string>
+    <string name="btn_totaljob">TOTAL JOB</string>
+    <string name="btn_completedjob">COMPLETED JOB</string>
+    <string name="btn_pendingjob">PENDING JOB</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="report">Report</string>
+    <string name="history">History</string>
+    <string name="notificaitons">Notifications</string>
+    <string name="enter_username">ENTER USER NAME</string>
+    <string name="enter_password">ENTER PASSWORD</string>
+    <string name="enter_country_name">ENTER COUNTRY NAME</string>
+
+    <string name="live">Live Tracking</string>
+    <string name="btn_cost">COST</string>
+    <string name="btn_cancel">CANCEL</string>
+    <string name="btn_save">SAVE</string>
+    <string name="btn_vehiclenumber">VEHICLE NUMBER</string>
+    <string name="str_select_photo">TAKE PHOTO</string>
+    <string name="str_upload_photo">UPLOAD PHOTO</string>
+    <string name="str_button_clear">CLEAR</string>
+    <string name="btn_status">STATUS</string>
+    <string name="btn_event">EVENT</string>
+    <string name="btn_exception">EXCEPTION</string>
+    <string name="btn_request_leave">REQUEST LEAVE</string>
+    <string name="btn_service_date">REPORTED DATE</string>
+    <string name="btn_request_name">LEAVE TYPE</string>
+    <string name="btn_request_name_service">SERVICE TYPE</string>
+    <string name="btn_cost_for">BILL FOR</string>
+    <string name="btn_from_location">PICKUP LOCATION</string>
+    <string name="btn_select_vehicle">SELECT VEHICLE</string>
+    <string name="btn_to_location">DELIVERY LOCATION</string>
+    <string name="btn_select_nric">SELECT</string>
+    <string name="btn_start_date">START DATE</string>
+    <string name="btn_pickup_date">PICKUP DATE</string>
+    <string name="btn_end_date">END DATE</string>
+    <string name="btn_del_date">DELIVERY DATE</string>
+    <string name="str_no_photo">SKIP PHOTO</string>
+    <string name="btn_request_maintanance">REQUEST MAINTAINANCE</string>
+
+    <!-- TextView-->
+    <string name="text_header_dashboard">DASHBOARD</string>
+    <string name="text_header_orderlist">ROUTE LIST</string>
+    <string name="str_no_network">OFF</string>
+    <string name="str_network_on">ON</string>
+    <string name="str_movie_sheet">MOVIE SEAT</string>
+    <string name="str_take_signature">TAKE SIGNATURE</string>
+    <string name="str_driver_incentive">INCENTIVE</string>
+    <string name="str_request_name">REQUEST NAME</string>
+    <string name="str_customer_to_sign">PLEASE SIGN BELOW</string>
+    <string name="str_movie_sheet_occupied">OCCUPIED</string>
+    <string name="str_movie_sheet_empty">EMPTY</string>
+    <string name="str_trip_cost">TRIP COST</string>
+    <string name="title_message">MESSAGE</string>
+    <string name="title_notification">NOTIFICATION</string>
+    <string name="title_download_file">UPLOAD</string>
+    <string name="title_upload_file">DOWNLOAD</string>
+    <string name="str_other_cost">OTHER COST</string>
+    <string name="str_movie_sheet_selected">SELECTED</string>
+
+    <!-- Toast -->
+    <string name="str_photo_uploaded">PHOTO UPLOADED</string>
+    <string name="str_photo_error">ERROR UPLOADING PHOTO</string>
+    <string name="str_signature_uploaded">SIGNATURE UPLOADED</string>
+    <string name="str_signature_error">ERROR UPLOADING SIGNATURE</string>
+
+    <!--Alert-->
+    <string name="alert_enter_driver_id">DRIVER ID IS REQUIRED</string>
+    <string name="alert_unabletoupdate_sheet">UNABLE TO UPDATE SHEET</string>
+    <string name="alert_qty_pickupbox_number">ENTER NUMBER OF BOX PICKED UP</string>
+    <string name="alert_qty_boxdetail">ENTER BOX DETAIL</string>
+    <string name="alert_internet_notavailable">NO INTERNET CONNECTION,STORING DATA LOCALLY</string>
+    <string name="alert_login_failed">LOGIN FAILED,TRY AGAIN</string>
+    <string name="alert_yes">YES</string>
+    <string name="yes">Yes</string>
+    <string name="alert_no">NO</string>
+    <string name="kms">kms</string>
+    <string name="time">date and time</string>
+    <string name="address">address</string>
+    <string name="number">number</string>
+
+    <string name="alert_take_customer_sign">PLEASE TAKE CUSTOMER SIGNATURE</string>
+    <string name="alert_error_want_more_photo">DO YOU WANT TO SKIP THE PHOTO PROOF?</string>
+    <string name="alert_ok">OK</string>
+    <string name="alert_upload_more_photo">WANT TO UPLOAD MORE PHOTOS?</string>
+    <string name="alert_scan_container">PLEASE SCAN THAN UPDATE</string>
+    <string name="alert_select_service_date">SELECT SERVICE DATE</string>
+    <string name="alert_addjob_pikuplocation">SELECT PICKUP LOCATION</string>
+    <string name="alert_addjob_pikupdate">SELECT PICKUP DATE</string>
+    <string name="alert_addjob_dellocation">SELECT DELIVERY LOCATION</string>
+    <string name="alert_addjob_deldate">SELECT DELIVERY DATE</string>
+    <string name="alert_addjob_tracking_number">SCAN AND ADD TRACKING NUMBER</string>
+    <string name="alert_addjob_num_of_trip">ADD NUMBER OF TRIP</string>
+    <string name="alert_addjob_select_vehicle">SELECT VEHICLE</string>
+    <string name="alert_select_photo">SELECT PHOTO FROM GALLERY/CAMERA</string>
+    <string name="alert_select_type">SELECT TYPE OF IMAGE</string>
+    <string name="alert_logout_user">ARE YOU SURE YOU WANT TO LOGOUT?</string>
+    <string name="alert_save_image">DO YOU WANT TO SAVE THIS IMAGE?</string>
+    <string name="alert_clear_notification">YOU WANT TO CLEAR ALL NOTIFICATION?</string>
+    <string name="alert_attach_assistant">DO YOU WANT TO ATTACH ASSISTANT?</string>
+    <string name="alert_attach_worksite">DO YOU WANT TO ATTACH WORKSITE?</string>
+    <string name="alert_attach_vehicle">DO YOU WANT TO ATTACH VEHICLE?</string>
+    <string name="alert_attach_container">DO YOU WANT TO ATTACH CONTAINER?</string>
+    <string name="alert_attach_container_while_loading">YOU CAN NOT VIEW MOVIE SEAT TILL YOU ATTACH CONTAINER IN YOUR ACCOUNT.</string>
+    <string name="alert_attach_container_while_maint">YOU CAN NOT SUBMIT SERVICE REQUEST TILL YOU ATTACH VEHICLE OR CONTAINER IN YOUR ACCOUNT.</string>
+    <string name="alert_deattach_assistant">DO YOU WANT TO DE ATTACH ASSISTANT</string>
+    <string name="alert_deattach_worksite">DO YOU WANT TO DE ATTACH WORKSITE</string>
+    <string name="alert_select_bill_for">PLEASE SELECT INCENTIVE TYPE</string>
+    <string name="alert_select_bill_for_sub">PLEASE SELECT INCENTIVE FOR</string>
+    <string name="alert_enter_cost">ENTER COST</string>
+    <string name="alert_deattach_vehicle">DO YOU WANT TO DE ATTACH VEHICLE</string>
+    <string name="alert_deattach_container">DO YOU WANT TO DE ATTACH CONTAINER</string>
+    <string name="alert_error_getting_orderlist">ERROR GETTING ORDER LIST</string>
+    <string name="alert_error_getting_messagelist">ERROR GETTING MESSAGE LIST</string>
+    <string name="alert_select_resources_assistant">SELECT ASSISTANT</string>
+    <string name="alert_attachment_title">ATTACHMENT LIST</string>
+    <string name="alert_title_from_location">ATTACHMENT LIST</string>
+    <string name="alert_title_to_location">ATTACHMENT LIST</string>
+
+    <string name="alert_exception_title">EXCEPTION LIST</string>
+    <string name="alert_status_title">SELECT STATUS</string>
+    <string name="alert_select_resources_vehicle">SELECT VEHICLE</string>
+    <string name="alert_select_resources_container">SELECT CONTAINER</string>
+    <string name="alert_select_worksite">SELECT WORKSITE</string>
+    <string name="alert_select_request_name">SELECT LEAVE TYPE</string>
+    <string name="alert_select_service_name">SELECT SERVICE TYPE</string>
+    <string name="alert_select_start_date">SELECT START DATE</string>
+    <string name="alert_select_attch_type">SELECT VEHICLE NUMBER</string>
+    <string name="alert_select_end_date">SELECT END DATE</string>
+    <string name="alert_start_end_date">START DATE CAN NOT BE GREATER THAN END DATE</string>
+    <string name="alert_start_end_delivery_date">PICKUP DATE CAN NOT BE GREATER THAN DELIVERY DATE</string>
+    <string name="alert_enter_remark">ENTER REMARK</string>
+    <string name="str_select_camera">CAMERA</string>
+    <string name="str_select_gallery">GALLERY</string>
+    <string name="str_cancel">CANCEL</string>
+    <string name="pref_work_status">pref_work_status</string>
+    <string name="pref_is_timephoto">pref_is_timephoto</string>
+    <string name="no_image">No image</string>
+    <string name="no_internet">DEVICE IS NOT CONNECTED TO INTERNET</string>
+    <string name="try_again">Try Again</string>
+    <string name="search">Search</string>
+    <string name="zero">0/0</string>
+    <string name="dataNotFound">Data not found</string>
+    <string name="vehicles">Vehicles</string>
+    <!--Progress Dialogue-->
+    <string name="str_progress_loading">WAIT A WHILE.....</string>
+
+    <!--Preference-->
+    <string name="pref_driverinfo">pref_driverinfo</string>
+    <string name="pref_tempratureCheck">pref_tempratureCheck</string>
+    <string name="pref_drivertype">pref_drivertype</string>
+    <string name="pref_checklist_url">pref_checklist_url</string>
+    <string name="pref_driverID">pref_driverid</string>
+    <string name="pref_IMEINumber">pref_imeinumber</string>
+    <string name="pref_Asst">pref_Asst</string>
+    <string name="pref_ceva_url">pref_ceva_url</string>
+    <string name="pref_isDigitalSignature">pref_isDigitalSignature</string>
+    <string name="pref_Client_ID">pref_Client_ID</string>
+    <string name="pref_Client_Name">pref_Client_Name</string>
+    <string name="pref_Container">pref_Container</string>
+    <string name="pref_Driver_Name">pref_Driver_Name</string>
+    <string name="pref_Load">pref_Load</string>
+    <string name="pref_worksite">pref_worksite</string>
+    <string name="pref_Temp_URL">pref_Temp_URL</string>
+    <string name="pref_VehNo">pref_VehNo</string>
+    <string name="map_api_key" >map_api_key</string>
+    <string name="Map_Enable" >Map_Enable</string>
+    <string name="pref_isUpdateRequired">pref_isLatestVersion</string>
+    <string name="pref_datetime">pref_datetime</string>
+    <string name="enter_pin">Please enter 4 Digit PIN</string>
+    <string name="error_pin">Incorrect PIN</string>
+    <string name="pin_veryfied">PIN Verified</string>
+    <string name="alert_attach_container_vehicle">Please attach container</string>
+    <string name="pref_mesibo_pin">pref_mesibo_pin</string>
+    <string name="error_unloading">Quantity of boxes entered is/are incorrect. Do You want to proceed?</string>
+    <string name="pref_Menu_Button_Counter">pref_Menu_Button_Counter</string>
+    <string name="btn_standby">Stand by</string>
+    <string name="btn_action_type">Action Type</string>
+    <string name="bn_duraion">SELECT DURATION</string>
+    <string name="btn_select">SELECT</string>
+    <string name="btn_select_container">SELECT CONTAINER</string>
+    <string name="pref_cam_option">pref_cam_option</string>
+    <string name="pref_driver_photo">pref_driver_photo</string>
+    <string name="pref_odoResName">pref_odoResName</string>
+    <string name="pref_odolast">pref_odolast</string>
+    <string name="pref_ISOdometer">pref_ISOdometer</string>
+    <string name="pref_CurrentOdometer">pref_CurrentOdometer</string>
+    <string name="pref_pdf_dialogue">pref_pdf_dialogue</string>
+    <string name="pref_pod_otp">pref_pod_otp</string>
+
+</resources>

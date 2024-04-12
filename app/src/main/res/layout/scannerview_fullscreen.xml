@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/frame_scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_top">
+
+        <me.dm7.barcodescanner.zxing.ZXingScannerView
+            android:id="@+id/mScannerView"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:soundEffectsEnabled="true"></me.dm7.barcodescanner.zxing.ZXingScannerView>
+
+        <ImageView
+            android:id="@+id/img_flash"
+            android:layout_width="@dimen/dim_mobile_img"
+            android:layout_height="@dimen/dim_mobile_img"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_flash_off"
+            />
+    </FrameLayout>
+</LinearLayout>

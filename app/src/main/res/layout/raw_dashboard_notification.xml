@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="horizontal">
+
+    <WebView
+        android:id="@+id/webnotification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="serif"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:autoLink="web"
+        android:textColorLink="@color/colorBlue"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_bigtext"
+         />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/colorOrange"></LinearLayout>
+
+
+</RelativeLayout>
+

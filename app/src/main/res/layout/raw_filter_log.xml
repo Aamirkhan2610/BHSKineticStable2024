@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:background="@color/colorOrange"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_leavetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:drawableLeft="@drawable/ic_driver"
+        android:fontFamily="serif"
+        android:drawablePadding="5dp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_vehicle"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:textColor="@android:color/white"></TextView>
+
+        <TextView
+            android:id="@+id/tv_leavedetail"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="left|center"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/ic_remark"
+            android:layout_alignParentRight="true"
+            android:text=""
+            android:textColor="@color/white"
+             />
+    </RelativeLayout>
+</LinearLayout>
+
+

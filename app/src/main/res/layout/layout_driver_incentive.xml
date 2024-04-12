@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg">
+
+    <include
+        android:id="@+id/header_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_header_height"
+        android:layout_alignParentTop="true" />
+
+
+    <Button
+        android:id="@+id/btn_cost_for"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_top"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dim_normal_view_padding"
+        android:layout_marginRight="@dimen/dim_normal_view_padding"
+        android:layout_marginTop="@dimen/dim_normal_view_padding"
+        android:background="@drawable/circularbutton_orange"
+        android:drawableRight="@drawable/arrow_down"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:text="@string/btn_cost_for"
+        android:textColor="@color/colorButtonText"
+        android:textSize="@dimen/dim_bigtext"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_cost"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_edt_name_height"
+        android:layout_marginLeft="@dimen/dim_normal_view_padding"
+        android:layout_marginRight="@dimen/dim_normal_view_padding"
+        android:layout_marginTop="@dimen/dim_normal_view_padding"
+        android:background="@drawable/edt_border"
+        android:gravity="top|left"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/btn_cost_for"
+        android:hint="@string/edt_hint_cost"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="@dimen/edt_width"
+        android:layout_height="@dimen/edt_height"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:background="@drawable/circularbutton_red"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:text="@string/btn_submit"
+        android:layout_below="@+id/edt_cost"
+        android:textColor="@color/colorButtonText"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/lv_driver_incentive"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/btn_submit"
+        android:layout_marginTop="@dimen/dim_normal_view_padding"
+        android:layout_height="wrap_content"
+        ></ListView>
+
+</RelativeLayout>

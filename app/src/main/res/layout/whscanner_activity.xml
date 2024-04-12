@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/layout_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btn_warehousename"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="WAREHOUSE NAME"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_mainpillar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="MAIN PILLER NAME"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                >
+
+            <Button
+                android:id="@+id/btn_subpillar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:layout_toLeftOf="@+id/img_scan"
+                android:layout_alignParentLeft="true"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="SUB PILLER NAME"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_scan"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/ic_qr_wh"></ImageView>
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btn_scanlist"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/ic_barecodevalue"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="Scan Code"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/lv_request_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/layout_scroll">
+
+    </ListView>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="@dimen/edt_width"
+        android:layout_height="@dimen/edt_height"
+        android:layout_gravity="center"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/circularbutton_red"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:text="@string/btn_submit"
+        android:textSize="@dimen/dim_bigtext"
+        android:textColor="@color/colorButtonText"
+        android:textStyle="bold" />
+
+</RelativeLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_header_height" />
+
+    <EditText
+        android:id="@+id/edt_search_order"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_edt_name_height"
+        android:layout_below="@+id/header_top"
+        android:layout_marginLeft="@dimen/dim_normal_view_padding"
+        android:layout_marginRight="@dimen/dim_normal_view_padding"
+        android:layout_marginTop="@dimen/dim_normal_view_padding"
+        android:background="@drawable/edt_border"
+        android:gravity="top|left"
+        android:visibility="gone"
+        android:hint="SEARCH ORDER...."
+        android:padding="@dimen/dim_normal_view_padding"
+        android:textColor="@android:color/black" />
+
+    <ListView
+        android:id="@+id/list_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_search_order"></ListView>
+
+    <LinearLayout
+        android:id="@+id/linear_pin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#656567"
+            android:gravity="center"
+            android:layout_gravity="center|center_horizontal"
+            android:textSize="@dimen/_16sdp"
+            android:text="@string/enter_pin"></TextView>
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorOrange"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:weightSum="4">
+        <EditText
+            android:id="@+id/edt1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_border"
+            android:inputType="phone"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:maxLength="1"
+            android:textColorHint="#656567"
+            android:textColor="#656567"></EditText>
+        <EditText
+            android:id="@+id/edt2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_border"
+            android:inputType="phone"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:maxLength="1"
+            android:textColorHint="#656567"
+            android:textColor="#656567"></EditText>
+
+        <EditText
+            android:id="@+id/edt3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_border"
+            android:inputType="phone"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:maxLength="1"
+            android:textColorHint="#656567"
+            android:textColor="#656567"></EditText>
+
+        <EditText
+            android:id="@+id/edt4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:background="@drawable/edt_border"
+            android:inputType="phone"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:maxLength="1"
+            android:textColorHint="#656567"
+            android:textColor="#656567"></EditText>
+
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="@dimen/edt_width"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:background="@drawable/circularbutton_red"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_submit"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</RelativeLayout>

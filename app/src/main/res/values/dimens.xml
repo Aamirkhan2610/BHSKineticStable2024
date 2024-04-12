@@ -1,0 +1,58 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="card_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="card_left_margin">12dp</dimen>
+    <dimen name="card_right_margin">12dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="dim_normal_view_margin">10dp</dimen>
+    <dimen name="dim_normal_view_margin_assistance">7dp</dimen>
+    <dimen name="dim_normal_view_padding">10dp</dimen>
+    <dimen name="dim_normal_view_padding_dashboard">3dp</dimen>
+    <dimen name="dim_margin_botton_login">10dp</dimen>
+    <dimen name="dim_orderlist_topmargin">10dp</dimen>
+    <dimen name="dim_header_height">80dp</dimen>
+    <dimen name="dim_layout_status_margin">50dp</dimen>
+    <dimen name="dim_header_textview_size">20dp</dimen>
+    <dimen name="dim_signatureview_height">200dp</dimen>
+    <dimen name="dim_margin_left_location">7dp</dimen>
+    <dimen name="dim_header_dashboard_textview_size">18dp</dimen>
+    <dimen name="dim_counter_textview_size">40dp</dimen>
+    <dimen name="dim_square_title">20dp</dimen>
+    <dimen name="dim_bigtext">24dp</dimen>
+    <dimen name="dim_bigtext_edt_hint">20dp</dimen>
+    <dimen name="dim_edt_remark_height">70dp</dimen>
+    <dimen name="dim_edt_name_height">50dp</dimen>
+    <dimen name="dim_square_margin">15dp</dimen>
+    <dimen name="dim_square_parent_maring">20dp</dimen>
+    <dimen name="dim_view_div_height">1dp</dimen>
+    <dimen name="dim_circle_margin_top">80dp</dimen>
+    <dimen name="dim_square">170dp</dimen>
+    <dimen name="dim_listview_devider_height">3dp</dimen>
+    <dimen name="dim_grid_dynamic_width">250dp</dimen>
+    <dimen name="dim_grid_dynamic_height">80dp</dimen>
+    <dimen name="dim_grid_dynamic_moviesheet_width">80dp</dimen>
+    <dimen name="edt_height">50dp</dimen>
+    <dimen name="dimen_width_tripcost">180dp</dimen>
+    <dimen name="edt_width">250dp</dimen>
+    <dimen name="edt_width_cost">150dp</dimen>
+    <dimen name="width_request_button">300dp</dimen>
+    <dimen name="height_request_button">100dp</dimen>
+    <dimen name="btn_width_resources">100dp</dimen>
+    <dimen name="edt_width_resources">150dp</dimen>
+    <dimen name="btn_margin_additional_cost">45dp</dimen>
+    <dimen name="dim_scanner_height">200dp</dimen>
+    <dimen name="dim_photo_img_height">150dp</dimen>
+    <dimen name="dim_photo_img_width">150dp</dimen>
+    <!-- Mobile -->
+    <dimen name="dim_mobileheader_height">100dp</dimen>
+    <dimen name="dim_dashboard_main_indicator">80dp</dimen>
+    <dimen name="dim_mobile_img">40dp</dimen>
+    <dimen name="dim_gridelement_spacing">20dp</dimen>
+    <dimen name="dim_gridelement_textsize">12dp</dimen>
+
+    </resources>

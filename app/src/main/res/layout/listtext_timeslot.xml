@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linear_div1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_margin="@dimen/_5sdp"></LinearLayout>
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif"
+        android:gravity="center|left"
+        android:textColor="@color/window_background"
+        android:textSize="@dimen/dim_bigtext"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linear_div"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_margin="@dimen/_5sdp"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+    <ImageView
+        android:id="@+id/radio_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_unselected"
+          />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toRightOf="@+id/radio_range"
+            android:fontFamily="serif"
+            android:gravity="center|left"
+            android:textColor="@color/window_background"
+            android:textSize="@dimen/dim_bigtext"
+            />
+    </RelativeLayout>
+
+
+</LinearLayout>

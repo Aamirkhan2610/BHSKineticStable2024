@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/frame_scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_top">
+
+
+
+        <me.dm7.barcodescanner.zxing.ZXingScannerView
+            android:id="@+id/mScannerView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dim_scanner_height"
+            android:soundEffectsEnabled="true"></me.dm7.barcodescanner.zxing.ZXingScannerView>
+
+        <ImageView
+            android:id="@+id/img_flash"
+            android:layout_width="@dimen/dim_mobile_img"
+            android:layout_height="@dimen/dim_mobile_img"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_flash_off"
+            />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/rel_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/app_bg"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/dim_normal_view_margin"
+            android:layout_marginRight="@dimen/dim_normal_view_padding"
+            android:layout_weight="1"
+            android:background="@drawable/circularbutton_blue"
+            android:gravity="center"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_status"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/dim_header_textview_size"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_exception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dim_normal_view_margin"
+            android:layout_marginRight="@dimen/dim_normal_view_padding"
+            android:layout_toRightOf="@+id/btn_status"
+            android:layout_weight="1"
+            android:background="@drawable/circularbutton_blue"
+            android:gravity="center"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_exception"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/dim_header_textview_size"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_scan_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rel_bottom"
+        android:layout_below="@+id/frame_scanner"
+        android:layout_marginBottom="@dimen/dim_normal_view_margin"></ListView>
+
+
+    <include
+        android:id="@+id/header_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_header_height" />
+
+</RelativeLayout>

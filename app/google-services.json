@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "488280387734",
+    "firebase_url": "https://bhs-kinetic-new.firebaseio.com",
+    "project_id": "bhs-kinetic-new",
+    "storage_bucket": "bhs-kinetic-new.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488280387734:android:16d41667fe1f6e5d",
+        "android_client_info": {
+          "package_name": "bhskinetic.idee.com.bhskinetic_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488280387734-lfqf04a1e8j372hf4amlifk8tlknvn8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgoowX4d3qZJaH3a-uNyfCMuOv8DHbp04"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

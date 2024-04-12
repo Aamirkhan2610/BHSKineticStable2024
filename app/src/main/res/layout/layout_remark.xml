@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:background="@drawable/rounded_red"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edt_remark"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/header_top"
+        android:layout_marginLeft="@dimen/dim_normal_view_padding"
+        android:layout_marginRight="@dimen/dim_normal_view_padding"
+        android:layout_marginTop="@dimen/dim_normal_view_padding"
+        android:layout_toLeftOf="@+id/img_close"
+        android:background="@drawable/edt_border"
+        android:gravity="top|left"
+        android:hint="Enter Exception"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:textColor="@android:color/black" />
+
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_remark"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:background="@color/colorBlue"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:text="@string/btn_submit"
+        android:textColor="@color/colorButtonText"
+        android:textSize="@dimen/dim_bigtext"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"></LinearLayout>
+
+
+</RelativeLayout>

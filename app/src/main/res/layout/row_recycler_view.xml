@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dr_rec_view_home"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:paddingStart="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_toLeftOf="@+id/iv_car"
+            android:background="#999595"
+            android:gravity="center"
+            android:padding="@dimen/_2sdp"
+            android:text="@string/kms"
+            android:textColor="@color/clr_black"
+            android:textSize="@dimen/_11ssp" />
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_AssetId"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/number"
+                android:textColor="@color/clr_black"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_DateTime"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/clr_black"
+                android:textSize="@dimen/_11ssp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ll1"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_toLeftOf="@id/iv_car"
+            android:text="@string/address"
+            android:textColor="@color/clr_tv_address"
+            android:textSize="@dimen/_11ssp" />
+
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/no_image"
+            android:src="@drawable/car_placeholder" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/rl_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@color/clr_black" />
+
+</RelativeLayout>

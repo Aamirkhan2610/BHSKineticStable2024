@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorOrange">
+
+        <FrameLayout
+            android:id="@+id/frame_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:background="@color/colorOrange"
+            android:padding="@dimen/dim_normal_view_padding">
+
+            <ImageView
+                android:id="@+id/img_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view_one"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/frame_driver"
+            android:background="@color/white"></View>
+
+        <TextView
+            android:id="@+id/tv_drivername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:layout_toLeftOf="@+id/tv_gps"
+            android:layout_toRightOf="@+id/view_one"
+            android:fontFamily="serif"
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+        <TextView
+            android:id="@+id/tv_gps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:layout_marginRight="@dimen/dim_normal_view_padding_dashboard"
+            android:drawableLeft="@drawable/ic_gps"
+            android:drawablePadding="@dimen/dim_normal_view_padding"
+            android:fontFamily="serif"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_view_div_height"
+        android:visibility="gone"
+        android:layout_below="@+id/layout_top"
+        android:background="@color/white"></View>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/rel_one"
+        android:background="@color/colorOrange">
+
+        <FrameLayout
+            android:id="@+id/frame_assistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/dim_normal_view_padding">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add" />
+
+        </FrameLayout>
+
+
+        <View
+            android:id="@+id/view_two"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/frame_assistance"
+            android:background="@color/white"></View>
+
+        <TextView
+            android:id="@+id/tv_assistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:layout_toLeftOf="@+id/tv_networktype"
+            android:layout_toRightOf="@+id/view_two"
+            android:fontFamily="serif"
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+        <TextView
+            android:id="@+id/tv_networktype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:layout_marginRight="@dimen/dim_normal_view_padding_dashboard"
+            android:drawableLeft="@drawable/ic_network"
+            android:drawablePadding="@dimen/dim_normal_view_padding"
+            android:fontFamily="serif"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/view_bottom"
+        android:layout_width="fill_parent"
+        android:visibility="gone"
+        android:layout_height="@dimen/dim_view_div_height"></View>
+
+    <!--<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_one"
+        android:weightSum="2">
+
+        <View
+            android:id="@+id/view_four_one"
+            android:layout_width="1dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorOrange">
+
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/dim_normal_view_padding">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add" />
+
+            </FrameLayout>
+
+
+            <View
+                android:id="@+id/view_four"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frame_container"
+                android:background="@color/white"></View>
+
+            <ImageView
+                android:id="@+id/img_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/view_four"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:paddingBottom="@dimen/dim_normal_view_padding_dashboard"
+                android:src="@drawable/ic_container" />
+
+
+            <TextView
+                android:id="@+id/tv_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/img_container"
+                android:fontFamily="serif"
+                android:textColor="@color/colorTextView"
+                android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:background="@color/colorOrange">
+
+                <FrameLayout
+                    android:id="@+id/frame_vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:padding="@dimen/dim_normal_view_padding">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+
+                <View
+                    android:id="@+id/view_three"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/frame_vehicle"
+                    android:background="@color/white"></View>
+
+                <ImageView
+                    android:id="@+id/img_vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/view_three"
+                    android:padding="@dimen/dim_normal_view_padding"
+                    android:paddingBottom="@dimen/dim_normal_view_padding_dashboard"
+                    android:src="@drawable/ic_vehicle" />
+
+
+                <TextView
+                    android:id="@+id/tv_vehiclenumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_toRightOf="@+id/img_vehicle"
+                    android:fontFamily="serif"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/linear_one"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorOrange">
+
+            <FrameLayout
+                android:id="@+id/frame_vehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/dim_normal_view_padding">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add" />
+
+            </FrameLayout>
+
+
+            <View
+                android:id="@+id/view_three"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frame_vehicle"
+                android:background="@color/white"></View>
+
+            <ImageView
+                android:id="@+id/img_vehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/view_three"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:paddingBottom="@dimen/dim_normal_view_padding_dashboard"
+                android:src="@drawable/ic_vehicle" />
+
+
+            <TextView
+                android:id="@+id/tv_vehiclenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/img_vehicle"
+                android:fontFamily="serif"
+                android:textColor="@color/colorTextView"
+                android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_four_one"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorOrange">
+
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/dim_normal_view_padding">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add" />
+
+            </FrameLayout>
+
+
+            <View
+                android:id="@+id/view_four"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/frame_container"
+                android:background="@color/white"></View>
+
+            <ImageView
+                android:id="@+id/img_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/view_four"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:paddingBottom="@dimen/dim_normal_view_padding_dashboard"
+                android:src="@drawable/ic_container" />
+
+
+            <TextView
+                android:id="@+id/tv_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/img_container"
+                android:fontFamily="serif"
+                android:textColor="@color/colorTextView"
+                android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

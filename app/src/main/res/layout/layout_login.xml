@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear_one"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:src="@drawable/bhs_logo" />
+
+        <EditText
+            android:id="@+id/edt_driverId"
+            android:layout_width="@dimen/edt_width"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:background="@drawable/edt_border"
+            android:hint="@string/edt_hint_driverId"
+            android:textColorHint="#656567"
+            android:textColor="#656567"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:textSize="@dimen/dim_bigtext_edt_hint" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="@dimen/edt_width"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:background="@drawable/circularbutton_red"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_login"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_cam"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rel_bottom"
+            android:layout_margin="10dp">
+
+            <bhskinetic.idee.com.bhskinetic_new.MySurfaceViewWithoutSignature
+                android:id="@+id/surfaceView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+
+            <EditText
+                android:id="@+id/edt_pword"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/edt_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_toLeftOf="@+id/btn_submit"
+                android:background="@drawable/edt_border"
+                android:hint="PASSWORD"
+                android:layout_margin="5dp"
+                android:textColorHint="#656567"
+                android:textColor="#656567"
+                android:inputType="textPassword"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:textSize="@dimen/dim_bigtext_edt_hint" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/edt_height"
+                android:layout_gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/circularbutton_red"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="SUBMIT"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

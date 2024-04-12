@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/layout_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text=""
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btn_workshopname"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="WORKSHOP NAME"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_location_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="LOCATION NAME"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_contact_person"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="CONTACT PERSON"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_actiontype"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="ACTION TYPE"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_action_date"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="ACTION DATE"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/edt_maintcost"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edt_border"
+                android:gravity="top|left"
+                android:inputType="numberDecimal"
+                android:hint="ENTER MAINTENANCE COST"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:textColorHint="#656567"
+                android:textColor="#656567" />
+
+            <EditText
+                android:id="@+id/edt_remark"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dim_edt_remark_height"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/edt_border"
+                android:gravity="top|left"
+                android:hint="@string/edt_hint_remark"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:textColorHint="#656567"
+                android:textColor="#656567" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="@dimen/edt_width"
+                android:layout_height="@dimen/edt_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/circularbutton_red"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="@string/btn_submit"
+                android:textSize="@dimen/dim_bigtext"
+                android:textColor="@color/colorButtonText"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

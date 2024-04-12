@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/layout_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_startdate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="ATTENDANCE TYPE"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_worksite"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:layout_marginTop="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_orange"
+                android:drawableRight="@drawable/arrow_down"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="WORK SITE"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_bigtext"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/lv_request_status"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/layout_scroll"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+       ></ListView>
+</RelativeLayout>

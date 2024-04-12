@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightOrange">
+
+    <TextView
+        android:id="@+id/tv_drivername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:drawableLeft="@drawable/ic_driver"
+        android:text=""
+        android:textColor="@color/colorTextView"
+        android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/layout_top"
+        android:layout_height="@dimen/dim_view_div_height"
+        android:background="@color/white"
+        ></View>
+
+    <TextView
+        android:id="@+id/tv_assistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:drawableLeft="@drawable/ic_assistance"
+        android:text=""
+        android:textColor="@color/colorTextView"
+        android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/layout_top"
+        android:layout_height="@dimen/dim_view_div_height"
+        android:background="@color/white"
+        ></View>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tv_vehiclenumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/dim_normal_view_padding_dashboard"
+            android:drawableLeft="@drawable/ic_vehicle"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+        <TextView
+            android:id="@+id/tv_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/dim_normal_view_padding_dashboard"
+            android:drawableLeft="@drawable/ic_container"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+        <TextView
+            android:id="@+id/tv_gps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dim_normal_view_padding_dashboard"
+            android:layout_marginRight="@dimen/dim_normal_view_padding_dashboard"
+            android:layout_toLeftOf="@+id/ic_networktype"
+            android:drawableLeft="@drawable/ic_gps"
+            android:fontFamily="serif"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_header_dashboard_textview_size" />
+
+    </LinearLayout>
+
+</LinearLayout>

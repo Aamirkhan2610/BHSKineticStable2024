@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightOrange"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_edt_name_height"
+            android:layout_below="@+id/header_top"
+            android:layout_marginLeft="@dimen/dim_normal_view_padding"
+            android:layout_marginRight="@dimen/dim_normal_view_padding"
+            android:layout_marginTop="@dimen/dim_normal_view_padding"
+            android:background="@drawable/edt_border"
+            android:gravity="top|left"
+            android:layout_toLeftOf="@+id/img_close"
+            android:hint="Search..."
+            android:padding="@dimen/dim_normal_view_padding"
+            android:textColorHint="#656567"
+            android:textColor="#656567"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dim_normal_view_margin"
+            android:src="@drawable/ic_close" />
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_resource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@color/white"
+        android:dividerHeight="1dp"></ListView>
+
+
+
+</LinearLayout>

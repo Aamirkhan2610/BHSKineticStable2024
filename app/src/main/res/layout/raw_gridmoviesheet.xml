@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_120sdp"
+    android:layout_height="@dimen/_120sdp"
+    android:id="@+id/layout_moviesheet_cell"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/moviesheet_green"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- Pending Jobs-->
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:layout_toRightOf="@+id/img_icon"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_square_title"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_normal_view_margin"
+        android:orientation="vertical"></LinearLayout>
+</LinearLayout>
+    <ImageView
+        android:id="@+id/chb_movie_seat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:src="@drawable/chb_normal"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_1sdp"
+        ></ImageView>
+</FrameLayout>

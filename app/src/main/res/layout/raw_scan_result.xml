@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightOrange"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_scan_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dim_normal_view_padding"
+        android:fontFamily="serif"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:autoLink="web"
+        android:textColorLink="@color/colorBlue"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/dim_bigtext"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layout_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dim_normal_view_margin"
+        android:background="@color/white"
+        android:padding="@dimen/dim_normal_view_padding_dashboard">
+
+        <ImageView
+            android:id="@+id/img_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rejected"
+            android:layout_gravity="center_vertical|center_horizontal" />
+    </LinearLayout>
+</RelativeLayout>
+

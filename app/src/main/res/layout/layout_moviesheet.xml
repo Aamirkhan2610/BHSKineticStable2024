@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <GridView
+        android:id="@+id/grid_moviesheet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top"
+        android:layout_above="@+id/layout_symbolindicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:visibility="gone"
+        android:background="@color/colorgridBg"
+        android:cacheColorHint="@android:color/transparent"
+        android:numColumns="2"
+        android:padding="@dimen/dim_normal_view_padding"
+        android:verticalSpacing="@dimen/dim_normal_view_margin"
+        android:horizontalSpacing="50dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layout_symbolindicator"
+        android:layout_below="@+id/layout_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="7dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_symbolindicator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:padding="@dimen/dim_normal_view_padding">
+            <TextView
+                android:id="@+id/tv_occupied"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_ball_grey"
+                android:drawablePadding="3dp"
+                android:gravity="center|left"
+                android:text="@string/str_movie_sheet_occupied"
+                android:textColor="@color/colorMovieRed" />
+
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_ball_green"
+                android:drawablePadding="3dp"
+                android:gravity="center|left"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/str_movie_sheet_empty"
+                android:textColor="@color/colorMovieGreen" />
+
+            <TextView
+                android:id="@+id/tv_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_ball_blue"
+                android:drawablePadding="3dp"
+                android:gravity="center|left"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                android:text="@string/str_movie_sheet_selected"
+                android:textColor="@color/colorMovieBlue" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="@dimen/edt_width"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center"
+            android:background="@drawable/circularbutton_red"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_submit"
+            android:textSize="@dimen/dim_bigtext"
+            android:textColor="@color/colorButtonText"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_normal_view_margin"
+            android:orientation="vertical"></LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

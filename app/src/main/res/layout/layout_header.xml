@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/header"
+    android:layout_height="wrap_content"
+    android:background="@color/colorOrange"
+    android:orientation="vertical"
+    android:padding="@dimen/dim_normal_view_padding">
+
+
+
+    <ImageView
+        android:id="@+id/img_refresh"
+        android:layout_width="@dimen/dim_mobile_img"
+        android:layout_height="@dimen/dim_mobile_img"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_refresh" />
+
+    <FrameLayout
+        android:id="@+id/frame_notification"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_toRightOf="@+id/img_refresh"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+
+        >
+
+
+    <ImageView
+        android:id="@+id/img_notification"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:src="@drawable/ic_header_bell" />
+
+        <TextView
+
+            android:id="@+id/tv_notificationcounter"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:text=""
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_gravity="right"
+            android:background="@drawable/rounded_black"></TextView>
+    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_toRightOf="@+id/frame_notification"
+        android:layout_toLeftOf="@+id/img_newmessage"
+        android:id="@+id/rel_center"
+       >
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="serif"
+            android:text=""
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/colorTextView"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_select_job_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_below="@+id/tv_header"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorTextView"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_newmessage"
+        android:layout_width="@dimen/dim_mobile_img"
+        android:layout_height="@dimen/dim_mobile_img"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/img_gallery"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/_10sdp"
+
+        android:src="@drawable/ic_compose" />
+    <ImageView
+        android:id="@+id/img_gallery"
+        android:layout_width="@dimen/dim_mobile_img"
+        android:layout_height="@dimen/dim_mobile_img"
+        android:layout_toLeftOf="@+id/img_logout"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:src="@drawable/ic_file" />
+    <ImageView
+        android:id="@+id/img_logout"
+        android:layout_width="@dimen/dim_mobile_img"
+        android:layout_height="@dimen/dim_mobile_img"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_logout" />
+
+
+</RelativeLayout>

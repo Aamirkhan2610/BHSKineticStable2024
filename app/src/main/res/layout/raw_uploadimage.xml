@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/dim_normal_view_padding_dashboard"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_access_denied" />
+
+        <ProgressBar
+            android:id="@+id/upload_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"></ProgressBar>
+
+        <ImageView
+            android:id="@+id/img_tick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            android:src="@drawable/ic_image_sent" />
+        <TextView
+            android:id="@+id/tv_doc_type"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:gravity="left|bottom"
+            android:textSize="15dp"
+            android:padding="1dp"
+            android:background="@color/colorOrange"
+            android:textColor="@color/white"
+             ></TextView>
+    </FrameLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_140sdp"
+    android:layout_height="@dimen/_60sdp"
+    android:id="@+id/radio_range"
+
+    android:background="@drawable/shape_rect_grid"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+    <!-- Pending Jobs-->
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        >
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:layout_toRightOf="@+id/img_icon"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/colorTextView"
+            android:textSize="@dimen/dim_square_title"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_normal_view_margin"
+        android:orientation="vertical"></LinearLayout>
+</LinearLayout>
+
+
+</FrameLayout>

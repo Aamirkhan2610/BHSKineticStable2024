@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rel_main"
+    android:background="@drawable/app_bg">
+
+    <include
+        android:id="@+id/header_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dim_header_height" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_signature"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:orientation="vertical">
+
+            <com.kyanogen.signatureview.SignatureView xmlns:sign="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/signature_view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dim_signatureview_height"
+                android:layout_margin="@dimen/dim_normal_view_margin"
+                android:background="@drawable/edt_border"
+                android:visibility="gone"
+                sign:backgroundColor="#FDE9E0"
+                sign:enableSignature="true"
+                sign:penColor="#000000"
+                sign:penSize="5dp" />
+
+            <FrameLayout
+                android:id="@+id/layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <bhskinetic.idee.com.bhskinetic_new.MySurfaceView
+                    android:id="@+id/surfaceView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_sign_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="PLEASE SIGN OVER IMAGE"/>
+
+        <EditText
+            android:id="@+id/edt_remark"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_edt_remark_height"
+            android:layout_below="@+id/layout_signature"
+            android:layout_marginLeft="@dimen/dim_normal_view_padding"
+            android:layout_marginRight="@dimen/dim_normal_view_padding"
+            android:background="@drawable/edt_border"
+            android:gravity="top|left"
+            android:hint="@string/edt_hint_remark"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:textColorHint="#656567"
+            android:textColor="#656567" />
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dim_edt_name_height"
+            android:layout_below="@+id/edt_remark"
+            android:layout_marginLeft="@dimen/dim_normal_view_padding"
+            android:layout_marginRight="@dimen/dim_normal_view_padding"
+            android:layout_marginTop="@dimen/dim_normal_view_padding"
+            android:background="@drawable/edt_border"
+            android:gravity="top|left"
+            android:hint="@string/edt_hint_customer_name"
+            android:padding="@dimen/dim_normal_view_padding"
+
+            android:textColorHint="#656567"
+            android:textColor="#656567"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_name"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="@dimen/dim_normal_view_padding"
+            android:layout_marginTop="@dimen/dim_normal_view_margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_blue"
+                android:gravity="center"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="@string/btn_submit"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_header_textview_size"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dim_normal_view_padding"
+                android:background="@drawable/circularbutton_blue"
+                android:gravity="center"
+                android:padding="@dimen/dim_normal_view_padding"
+                android:text="@string/str_button_clear"
+                android:textColor="@color/colorButtonText"
+                android:textSize="@dimen/dim_header_textview_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

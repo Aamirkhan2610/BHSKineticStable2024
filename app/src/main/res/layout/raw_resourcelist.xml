@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightOrange"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rel_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dim_normal_view_padding_dashboard">
+
+        <EditText
+            android:id="@+id/edt_resourcelist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_toLeftOf="@+id/img_search"
+            android:textColorHint="#656567"
+            android:textColor="#656567"
+            android:background="@color/colorEditTextBackground"
+            android:padding="@dimen/dim_normal_view_padding" />
+
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_toLeftOf="@+id/img_barecode"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:src="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/img_barecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:src="@drawable/barecode" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:text=""></TextView>
+
+    <ListView
+        android:id="@+id/lv_resource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dim_normal_view_margin"
+        android:layout_marginTop="@dimen/dim_normal_view_margin"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:background="@drawable/circularbuttonblue"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_submit"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edt_height"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dim_normal_view_margin"
+            android:background="@drawable/circularbuttonblue"
+            android:padding="@dimen/dim_normal_view_padding"
+            android:text="@string/btn_cancel"
+            android:textColor="@color/colorButtonText"
+            android:textSize="@dimen/dim_bigtext"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</LinearLayout>

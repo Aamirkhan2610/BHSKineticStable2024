@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAppBg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layout_top"
+        layout="@layout/layout_header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/layout_scroll_prod"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_20ssp"
+                android:layout_marginRight="@dimen/_20ssp"
+               >
+
+                <ImageView
+                    android:id="@+id/img_driver"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ic_default"></ImageView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/img_driver"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edt_driver_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edt_border"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:text="DRIVER NAME"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/btn_vehicle_number0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:text="Vehicle Number"
+                        android:background="@drawable/circularbutton_orange"
+                        android:paddingRight="@dimen/dim_normal_view_padding"
+                        android:textColor="@color/colorButtonText"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_vehicle_number"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/circularbutton_orange"
+                        android:drawableRight="@drawable/ic_barecode_small"
+                        android:paddingRight="@dimen/dim_normal_view_padding"
+                        android:textColor="@color/colorButtonText"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circularbutton_red"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edt_current_odometer"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edt_border"
+                        android:gravity="center"
+                        android:hint="ODOMETER"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+
+                    <!--<EditText
+                        android:id="@+id/edt_current_location"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edt_border"
+                        android:enabled="false"
+                        android:lines="5"
+                        android:minLines="1"
+                        android:gravity="top|left"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:text="CURRENT LOCATION"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />-->
+                    <EditText
+                        android:id="@+id/edt_datetime"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edt_border"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:inputType="text"
+                        android:padding="10dp"
+                        android:text="CURRENT DATE-TIME"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:id="@+id/edt_current_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edt_border"
+                        android:gravity="center"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:text="I Undertake this vehicle that has been assigned to me and i am responsible for the vehicle"
+                    android:textAllCaps="true" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_confirm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dim_normal_view_margin"
+                        android:background="@drawable/circularbuttonblue"
+                        android:padding="5dp"
+                        android:text="CONFIRM"
+                        android:textColor="@color/colorButtonText"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dim_normal_view_margin"
+                        android:background="@drawable/circularbuttonblue"
+                        android:padding="5dp"
+                        android:text="CANCEL"
+                        android:textColor="@color/colorButtonText"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
