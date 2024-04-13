@@ -6,4 +6,18 @@
         name="files"   path="." />
     <external-cache-path
         name="images" path="." />
+    <external-files-path
+        name="external_files"
+        path="." />
+    <external-cache-path
+        name="external_cache"
+        path="." />
+
+    <cache-path
+        name="cache"
+        path="." />
+    <external-path
+        name="external"
+        path="." />
+
 </paths>

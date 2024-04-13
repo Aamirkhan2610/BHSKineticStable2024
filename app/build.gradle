@@ -110,6 +110,7 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpclient:4.5'
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'gun0912.ted:tedpermission:2.1.0'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
 
 
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'

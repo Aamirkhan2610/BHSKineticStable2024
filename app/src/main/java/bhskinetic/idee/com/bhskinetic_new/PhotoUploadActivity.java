@@ -29,6 +29,7 @@ import android.provider.MediaStore;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -119,7 +120,7 @@ public class PhotoUploadActivity extends Activity {
     public static TextView tv_notificationcounter;
     public static FrameLayout frame_notification;
     public static Bitmap bm1;
-    public static boolean isPONO=false;
+    public static boolean isPONO = false;
     public static String UploadingImageName = "";
     public static boolean isDefault = true;
     public static String UploadUrl = "";
@@ -153,6 +154,8 @@ public class PhotoUploadActivity extends Activity {
     Uri fileUri;
     File camFile;
     public static boolean isAssignJob = false;
+
+    private String profilepath = "";
     public static ArrayList<Bitmap> bitmapModelArrayList;
     GalleryImageAdapter galleryImageAdapter;
     public static int PHOTO_TYPE = 0;
@@ -168,9 +171,10 @@ public class PhotoUploadActivity extends Activity {
     public static ImageView ic_gallery_big, ic_cam_big;
     public static Button btn_phototype;
     public static Button btn_hawb_member;
-    public static String workgroup="";
-    public static boolean isDirectPOD=false;
-    public static String isViaAssign="0";
+    public static String workgroup = "";
+    public static boolean isDirectPOD = false;
+    public static String isViaAssign = "0";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -210,7 +214,7 @@ public class PhotoUploadActivity extends Activity {
         if (Utils.isFromMultipleSelection) {
             Utils.isFromMultipleSelection = false;
 
-         //ApplyImages();
+            //ApplyImages();
 
         } else {
             if (mySelectedPhotos != null) {
@@ -232,7 +236,7 @@ public class PhotoUploadActivity extends Activity {
                 adapter.notifyDataSetChanged();
 
 
-                if(mySelectedPhotosGlobal.get(uploadCounter).getImageID()==0) {
+                if (mySelectedPhotosGlobal.get(uploadCounter).getImageID() == 0) {
                     Glide.with(mContext)
                             .load(mySelectedPhotosGlobal.get(uploadCounter).getPath())
                             .asBitmap()
@@ -245,8 +249,8 @@ public class PhotoUploadActivity extends Activity {
                                     new uploadPhotoNew().execute();
                                 }
                             });
-                }else{
-                    imagename = System.currentTimeMillis() + "_" + Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext)+"."+mySelectedPhotosGlobal.get(uploadCounter).getPath().split("_")[1];
+                } else {
+                    imagename = System.currentTimeMillis() + "_" + Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext) + "." + mySelectedPhotosGlobal.get(uploadCounter).getPath().split("_")[1];
                     isDefault = false;
                     new uploadPhotoNew().execute();
                 }
@@ -255,7 +259,7 @@ public class PhotoUploadActivity extends Activity {
                     linear_center.setVisibility(View.GONE);
                     img_logout.setVisibility(View.VISIBLE);
                     img_gallery.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     img_logout.setVisibility(View.VISIBLE);
                     img_gallery.setVisibility(View.GONE);
                 }
@@ -332,16 +336,16 @@ public class PhotoUploadActivity extends Activity {
 
                 h.tvDocType.setText(mySelectedPhotosGlobal.get(position).getDocType());
                 final GridElementAdapter.ViewHolder finalH = h;
-                if(mySelectedPhotosGlobal.get(position).getImageID()==0) {
+                if (mySelectedPhotosGlobal.get(position).getImageID() == 0) {
                     Glide.with(mContext).load(mySelectedPhotosGlobal.get(position).getPath()).into(finalH.img);
-                }else{
+                } else {
                     finalH.img.setImageResource(R.drawable.ic_file);
                 }
 
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(mySelectedPhotosGlobal.get(position).getPath().contains("http")) {
+                        if (mySelectedPhotosGlobal.get(position).getPath().contains("http")) {
                             MimeTypeMap myMime = MimeTypeMap.getSingleton();
                             Intent newIntent = new Intent(Intent.ACTION_VIEW);
                             String mimeType = myMime.getMimeTypeFromExtension(fileExt(mySelectedPhotosGlobal.get(position).getPath()).substring(1));
@@ -359,11 +363,12 @@ public class PhotoUploadActivity extends Activity {
             } else {
                 h = (GridElementAdapter.ViewHolder) v.getTag();
                 final GridElementAdapter.ViewHolder finalH = h;
-                if(mySelectedPhotosGlobal.get(position).getImageID()==0) {
+                if (mySelectedPhotosGlobal.get(position).getImageID() == 0) {
                     Glide.with(mContext).load(mySelectedPhotosGlobal.get(position).getPath()).into(finalH.img);
-                }else{
+                } else {
                     finalH.img.setImageResource(R.drawable.ic_file);
-                }                h.tvDocType.setText(mySelectedPhotosGlobal.get(position).getDocType());
+                }
+                h.tvDocType.setText(mySelectedPhotosGlobal.get(position).getDocType());
                 if (mySelectedPhotosGlobal.get(position).isChecked()) {
                     h.imgTick.setVisibility(View.VISIBLE);
                     h.uploadPorgress.setVisibility(View.GONE);
@@ -376,7 +381,7 @@ public class PhotoUploadActivity extends Activity {
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(mySelectedPhotosGlobal.get(position).getPath().contains("http")) {
+                        if (mySelectedPhotosGlobal.get(position).getPath().contains("http")) {
                             MimeTypeMap myMime = MimeTypeMap.getSingleton();
                             Intent newIntent = new Intent(Intent.ACTION_VIEW);
                             String mimeType = myMime.getMimeTypeFromExtension(fileExt(mySelectedPhotosGlobal.get(position).getPath()).substring(1));
@@ -436,14 +441,14 @@ public class PhotoUploadActivity extends Activity {
             // TODO Auto-generated method stub
             String uploadresponse = "";
             try {
-                byte[] data=null;
+                byte[] data = null;
 
-                if(mySelectedPhotosGlobal.get(uploadCounter).getImageID()==0) {
+                if (mySelectedPhotosGlobal.get(uploadCounter).getImageID() == 0) {
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
                     bm1.compress(Bitmap.CompressFormat.JPEG, 75, bos);
                     data = bos.toByteArray();
-                }else{
-                    InputStream iStream =   getContentResolver().openInputStream(Uri.parse(mySelectedPhotosGlobal.get(uploadCounter).getPath().split("_")[0]));
+                } else {
+                    InputStream iStream = getContentResolver().openInputStream(Uri.parse(mySelectedPhotosGlobal.get(uploadCounter).getPath().split("_")[0]));
                     data = getBytes(iStream);
                 }
 
@@ -491,7 +496,7 @@ public class PhotoUploadActivity extends Activity {
                 reqEntity.addPart("Str_Loc", new StringBody(ADDRESS));
                 reqEntity.addPart("Str_GPS", new StringBody(GPS_STATUS));
                 reqEntity.addPart("Str_DriverID", new StringBody(DriverID));
-                if(mySelectedPhotosGlobal.get(uploadCounter).getImageID()==0) {
+                if (mySelectedPhotosGlobal.get(uploadCounter).getImageID() == 0) {
 
                     if (bm1.getWidth() > bm1.getHeight()) {
                         //meaning the image is landscape view
@@ -551,7 +556,7 @@ public class PhotoUploadActivity extends Activity {
                         if (isAssignJob) {
                             createJob(ADDRESS, LATITUDE, LONGITUDE, GPS_STATUS);
                         }
-                    }else {
+                    } else {
 
 
                         if (mySelectedPhotosGlobal.size() > 0) {
@@ -616,8 +621,8 @@ public class PhotoUploadActivity extends Activity {
         Str_JobNo = "";
         Str_TripNo = "";
         uploadCounter = 0;
-        isPONO=false;
-        isDirectPOD=false;
+        isPONO = false;
+        isDirectPOD = false;
         selectedImageGallery = (Gallery) findViewById(R.id.selected_image_gallery);
         selectedImageGallery.setSpacing(50);
         bitmapModelArrayList = new ArrayList<Bitmap>();
@@ -628,7 +633,7 @@ public class PhotoUploadActivity extends Activity {
         pDialog.setCancelable(false);
         myflag = 0;
         PHOTO_TYPE = 0;
-        mySelectedPhotos=new ArrayList<>();
+        mySelectedPhotos = new ArrayList<>();
         mySelectedPhotosGlobal = new ArrayList<>();
 
         if (mySelectedPhotosGlobal != null) {
@@ -647,7 +652,7 @@ public class PhotoUploadActivity extends Activity {
         });
         img_logout = (ImageView) findViewById(R.id.img_logout);
         img_gallery = (ImageView) findViewById(R.id.img_gallery);
-        img_newmessage= (ImageView) findViewById(R.id.img_newmessage);
+        img_newmessage = (ImageView) findViewById(R.id.img_newmessage);
         img_gallery.setVisibility(View.VISIBLE);
         gps = new TrackGPS(mContext);
         PhotoJSON = "";
@@ -705,12 +710,11 @@ public class PhotoUploadActivity extends Activity {
         ic_gallery_big = findViewById(R.id.ic_gallery_big);
         ic_cam_big = findViewById(R.id.ic_cam_big);
         img_notification = findViewById(R.id.img_notification);
-        tv_notificationcounter= findViewById(R.id.tv_notificationcounter);
-        frame_notification= findViewById(R.id.frame_notification);
+        tv_notificationcounter = findViewById(R.id.tv_notificationcounter);
+        frame_notification = findViewById(R.id.frame_notification);
 
 
-
-        if(isSign){
+        if (isSign) {
             img_notification.setVisibility(View.VISIBLE);
             frame_notification.setVisibility(View.VISIBLE);
             tv_notificationcounter.setVisibility(View.GONE);
@@ -753,13 +757,13 @@ public class PhotoUploadActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                getPODData("NA",""+gps.getLatitude(),""+gps.getLongitude(),"");
+                getPODData("NA", "" + gps.getLatitude(), "" + gps.getLongitude(), "");
             }
         });
 
-        if(b.getString("isDirectPOD")!=null){
-            isDirectPOD=true;
-            getPODData("NA",""+gps.getLatitude(),""+gps.getLongitude(),"");
+        if (b.getString("isDirectPOD") != null) {
+            isDirectPOD = true;
+            getPODData("NA", "" + gps.getLatitude(), "" + gps.getLongitude(), "");
         }
 
 
@@ -778,7 +782,6 @@ public class PhotoUploadActivity extends Activity {
                 selectImage(0);
             }
         });
-
 
 
         btn_select_photo = (Button) findViewById(R.id.btn_select_photo);
@@ -917,8 +920,6 @@ public class PhotoUploadActivity extends Activity {
 
 
         img_gallery.setVisibility(View.GONE);
-
-
 
 
         if (!isAssignJob) {
@@ -1364,8 +1365,15 @@ public class PhotoUploadActivity extends Activity {
                         public void onClick(DialogInterface dialog, int which) {
                             // finish();
                             dialog.cancel();
-                            Intent chooseImageIntent = ImagePicker.getPickImageIntent(mContext);
-                            startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
+                            com.github.dhaval2404.imagepicker.ImagePicker.with(PhotoUploadActivity.this)
+                                    .compress(1024)
+                                    .maxResultSize(1080, 1080)
+                                    .cameraOnly()
+                                    .start(PICK_IMAGE_ID);
+
+
+                            //     Intent chooseImageIntent = ImagePicker.getPickImageIntent(mContext);
+                            //   startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
                           /*  Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                                 startActivityForResult(takePictureIntent, PICK_IMAGE_ID);
@@ -1403,17 +1411,16 @@ public class PhotoUploadActivity extends Activity {
     }
 
 
-
     private void createJobViaAssign(String address, String lat, String lng, String gpsStatus) {
         String driverId = Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext);
         String IMEINumber = Utils.getPref(mContext.getResources().getString(R.string.pref_IMEINumber), mContext);
         String ClientID = Utils.getPref(mContext.getResources().getString(R.string.pref_Client_ID), mContext);
-        String URL = "Adhoc_Job_Create.jsp?Str_CreateMode=SNAP&Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID +"&Str_BarCode=" + REMARK + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_DriverID=" + driverId + "&Str_PickUP_Loc=" + AssignJobActivity.namefromLocation + "&Str_PickUP_Dt=" + AssignJobActivity.btn_startdate.getText().toString().trim() + "&Str_Delivery_Loc=" + AssignJobActivity.nametoLocation + "&Str_Delivery_Dt=" + AssignJobActivity.btn_enddate.getText().toString().trim() + "&Str_OrderNo=" + "NA" + "&Str_NoofTrip=" + AssignJobActivity.edt_numberof_trip.getText().toString().trim() + "&Str_VehicleNo=" + AssignJobActivity.nameVehicle;
+        String URL = "Adhoc_Job_Create.jsp?Str_CreateMode=SNAP&Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_BarCode=" + REMARK + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_DriverID=" + driverId + "&Str_PickUP_Loc=" + AssignJobActivity.namefromLocation + "&Str_PickUP_Dt=" + AssignJobActivity.btn_startdate.getText().toString().trim() + "&Str_Delivery_Loc=" + AssignJobActivity.nametoLocation + "&Str_Delivery_Dt=" + AssignJobActivity.btn_enddate.getText().toString().trim() + "&Str_OrderNo=" + "NA" + "&Str_NoofTrip=" + AssignJobActivity.edt_numberof_trip.getText().toString().trim() + "&Str_VehicleNo=" + AssignJobActivity.nameVehicle;
         String tripNumber = REMARK;
 
-       // String URL = "Adhoc_Job_Create.jsp?Str_CreateMode=SNAP&Str_BarCode=" + tripNumber + "&Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_DriverID=" + driverId + "&Str_PickUP_Loc=" + BookingJobActivity.namefromLocation + "&Str_PickUP_Dt=" + _startDateStr + "&Str_Delivery_Loc=" + BookingJobActivity.nametoLocation + "&Str_Delivery_Dt=" + BookingJobActivity.selectedDat + " " + timeslot2 + ":00" + "&Str_NoofTrip=" + BookingJobActivity.edt_numberof_trip.getText().toString().trim() + "&Str_VehicleNo=" + BookingJobActivity.btn_container.getText().toString().trim() + "&Str_WorkGroup=" + workgroup;
+        // String URL = "Adhoc_Job_Create.jsp?Str_CreateMode=SNAP&Str_BarCode=" + tripNumber + "&Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_DriverID=" + driverId + "&Str_PickUP_Loc=" + BookingJobActivity.namefromLocation + "&Str_PickUP_Dt=" + _startDateStr + "&Str_Delivery_Loc=" + BookingJobActivity.nametoLocation + "&Str_Delivery_Dt=" + BookingJobActivity.selectedDat + " " + timeslot2 + ":00" + "&Str_NoofTrip=" + BookingJobActivity.edt_numberof_trip.getText().toString().trim() + "&Str_VehicleNo=" + BookingJobActivity.btn_container.getText().toString().trim() + "&Str_WorkGroup=" + workgroup;
 
-         if (URL.contains(" ")) {
+        if (URL.contains(" ")) {
             URL = URL.replace(" ", "%20");
         }
 
@@ -1423,9 +1430,9 @@ public class PhotoUploadActivity extends Activity {
 
     private void createJob(String address, String lat, String lng, String gpsStatus) {
 
-        if(isViaAssign.equalsIgnoreCase("1")){
-            createJobViaAssign("", ""+lat, ""+lng, "");
-        }else {
+        if (isViaAssign.equalsIgnoreCase("1")) {
+            createJobViaAssign("", "" + lat, "" + lng, "");
+        } else {
             String driverId = Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext);
             String IMEINumber = Utils.getPref(mContext.getResources().getString(R.string.pref_IMEINumber), mContext);
             String ClientID = Utils.getPref(mContext.getResources().getString(R.string.pref_Client_ID), mContext);
@@ -1471,6 +1478,7 @@ public class PhotoUploadActivity extends Activity {
             APIUtils.sendRequest(mContext, "Create Job Photo", URL, "createJobPhoto");
         }
     }
+
     private static Bitmap decodeBitmap(Context context, Uri theUri, int sampleSize) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = sampleSize;
@@ -1506,39 +1514,61 @@ public class PhotoUploadActivity extends Activity {
 
 
     public static Uri getImageUriFromBitmap(Bitmap bitmap) {
-       // ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-       // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        // ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        // bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(mContext.getContentResolver(), bitmap, "Title", null);
         return Uri.parse(path);
     }
+
+    private String saveImageToStorage(Bitmap bitmap) {
+        imagename = System.currentTimeMillis() + "_" + Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext) + ".jpg";
+
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+
+        try {
+            File imageFile = new File(storageDir, imagename);
+            FileOutputStream fos = new FileOutputStream(imageFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos);
+            fos.close();
+            return imageFile.getAbsolutePath() ;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
         /*Gallery code end*/
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_ID) {
-            if (resultCode != 0) {
-                try {
-                    bm1 = null;
-                   bm1 = ImagePicker.getImageFromResult(mContext, resultCode, data);
+        if (requestCode == PICK_IMAGE_ID && resultCode == Activity.RESULT_OK) {
+            try {
+                bm1 = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+
+               // bm1 = (Bitmap) data.getExtras().get("data");
+                profilepath = saveImageToStorage(bm1).toString();
+                Log.e("currentPhotoPath", "=$currentPhotoPath");
+
+                //    bm1 = null;
+                //  bm1 = ImagePicker.getImageFromResult(mContext, resultCode, data);
                 //    bm1 = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), data.getData());
 
-                    imagename = System.currentTimeMillis() + "_" + Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext) + ".jpg";
-                    isDefault = false;
-                }catch(Exception e){
-                    e.printStackTrace();
-                }
+                isDefault = false;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-                if(bm1 == null){
-                    Toast.makeText(mContext,"NULL",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(mContext,"!NULL",Toast.LENGTH_SHORT).show();
-                }
+            if (bm1 == null) {
+                Toast.makeText(mContext, "NULL", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(mContext, "!NULL", Toast.LENGTH_SHORT).show();
+            }
 
             /*    if (requestCode == PICK_IMAGE_ID && resultCode == RESULT_OK) {
                     Bitmap compressedBitmap = null;
                     try {
-                       // compressedBitmap = compressBitmap((Bitmap) data.getExtras().get("data"), 70); // Adjust compression quality as needed
+                       // compreonssedBitmap = compressBitmap((Bitmap) data.getExtras().get("data"), 70); // Adjust compression quality as needed
                     compressedBitmap = getImageResized(mContext,getImageUriFromBitmap((Bitmap) data.getExtras().get("data")));
 
                     } catch (Exception e) {
@@ -1560,28 +1590,26 @@ public class PhotoUploadActivity extends Activity {
                     Toast.makeText(this, "Image capture failed", Toast.LENGTH_SHORT).show();
                 }*/
 
+            gridDynamic.getChildAt(gridDynamic.getChildCount());
 
+            PhotoEntryUploading photoEntryUploading = new PhotoEntryUploading();
+            photoEntryUploading.setPath(SaveImage(bm1));
+            photoEntryUploading.setChecked(false);
+            photoEntryUploading.setDocType(STR_REV);
+            mySelectedPhotosGlobal.add(photoEntryUploading);
+            adapter.notifyDataSetChanged();
 
-                PhotoEntryUploading photoEntryUploading = new PhotoEntryUploading();
-                photoEntryUploading.setPath(SaveImage(bm1));
-                photoEntryUploading.setChecked(false);
-                photoEntryUploading.setDocType(STR_REV);
-                mySelectedPhotosGlobal.add(photoEntryUploading);
-                adapter.notifyDataSetChanged();
-
-                if (mySelectedPhotosGlobal.size() > 0) {
-                    linear_center.setVisibility(View.GONE);
-                    img_logout.setVisibility(View.VISIBLE);
-                    img_gallery.setVisibility(View.VISIBLE);
-                }
-
-                new uploadPhotoNew().execute();
-                gridDynamic.getChildAt(gridDynamic.getChildCount());
-
+            if (mySelectedPhotosGlobal.size() > 0) {
+                linear_center.setVisibility(View.GONE);
+                img_logout.setVisibility(View.VISIBLE);
+                img_gallery.setVisibility(View.VISIBLE);
             }
-        }else if(requestCode==786){
+
+            new uploadPhotoNew().execute();
+
+        } else if (requestCode == 786) {
             mySelectedPhotos.clear();
-            if(data.getClipData() != null) {
+            if (data.getClipData() != null) {
                 try {
                     int count = data.getClipData().getItemCount();
                     for (int i = 0; i < count; i++) {
@@ -1602,27 +1630,26 @@ public class PhotoUploadActivity extends Activity {
                         //do what do you want to do
                     }
                     ApplyImages();
-                }catch (Exception e){
-                    Toast.makeText(mContext,"This file is not accessible",Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(mContext, "This file is not accessible", Toast.LENGTH_SHORT).show();
                 }
-            }
-            else if(data.getData() != null) {
-                try{
-                Uri selectedImageUri = data.getData();
-                PhotoEntry photoEntry=new PhotoEntry();
-                photoEntry.setPath(selectedImageUri.toString());
-                if(isImage(getMimeType(selectedImageUri))){
-                    photoEntry.setImageId(0);
+            } else if (data.getData() != null) {
+                try {
+                    Uri selectedImageUri = data.getData();
+                    PhotoEntry photoEntry = new PhotoEntry();
                     photoEntry.setPath(selectedImageUri.toString());
-                }else{
-                    photoEntry.setImageId(1);
-                    photoEntry.setPath(selectedImageUri.toString()+"_"+getMimeType(selectedImageUri));
+                    if (isImage(getMimeType(selectedImageUri))) {
+                        photoEntry.setImageId(0);
+                        photoEntry.setPath(selectedImageUri.toString());
+                    } else {
+                        photoEntry.setImageId(1);
+                        photoEntry.setPath(selectedImageUri.toString() + "_" + getMimeType(selectedImageUri));
+                    }
+                    mySelectedPhotos.add(photoEntry);
+                    ApplyImages();
+                } catch (Exception e) {
+                    Toast.makeText(mContext, "This file is not accessible", Toast.LENGTH_SHORT).show();
                 }
-                mySelectedPhotos.add(photoEntry);
-                ApplyImages();
-            }catch (Exception e){
-                Toast.makeText(mContext,"This file is not accessible",Toast.LENGTH_SHORT).show();
-            }
                 //do what do you want to do
             }
         }
@@ -1639,11 +1666,11 @@ public class PhotoUploadActivity extends Activity {
 
     private boolean isImage(String mimeType) {
 
-            if(mimeType.equalsIgnoreCase("jpg")||mimeType.equalsIgnoreCase("png")||mimeType.equalsIgnoreCase("gif")){
-                return true;
-            }else{
-                return false;
-            }
+        if (mimeType.equalsIgnoreCase("jpg") || mimeType.equalsIgnoreCase("png") || mimeType.equalsIgnoreCase("gif")) {
+            return true;
+        } else {
+            return false;
+        }
 
 
     }
@@ -1939,19 +1966,18 @@ public class PhotoUploadActivity extends Activity {
                         photoEntryUploading.setDocType(value.optString("ActionType"));
                         photoEntryUploading.setPath(value.optString("ActionName"));
 
-                        if(value.optString("ActionName").toString().contains(".jpg")||value.optString("ActionName").toString().contains(".jpeg")||
-                                value.optString("ActionName").toString().contains(".JPG")||value.optString("ActionName").toString().contains(".JPEG")||
-                                value.optString("ActionName").toString().contains(".png")||value.optString("ActionName").toString().contains(".PNG")||
-                                value.optString("ActionName").toString().contains(".image")||value.optString("ActionName").toString().contains(".IMAGE")||
+                        if (value.optString("ActionName").toString().contains(".jpg") || value.optString("ActionName").toString().contains(".jpeg") ||
+                                value.optString("ActionName").toString().contains(".JPG") || value.optString("ActionName").toString().contains(".JPEG") ||
+                                value.optString("ActionName").toString().contains(".png") || value.optString("ActionName").toString().contains(".PNG") ||
+                                value.optString("ActionName").toString().contains(".image") || value.optString("ActionName").toString().contains(".IMAGE") ||
 
-                                value.optString("ActionName").toString().contains(".gif")||value.optString("ActionName").toString().contains(".GIF")){
+                                value.optString("ActionName").toString().contains(".gif") || value.optString("ActionName").toString().contains(".GIF")) {
 
                             photoEntryUploading.setImageID(0);
 
-                        }else{
+                        } else {
                             photoEntryUploading.setImageID(1);
                         }
-
 
 
                         mySelectedPhotosGlobal.add(photoEntryUploading);
@@ -1994,20 +2020,20 @@ public class PhotoUploadActivity extends Activity {
                 e.printStackTrace();
             }
 
-        }else if (redirectionKey.equalsIgnoreCase("podList")) {
+        } else if (redirectionKey.equalsIgnoreCase("podList")) {
             try {
                 JSONObject exceptionlist = new JSONObject(response);
                 if (exceptionlist.optString("recived").equalsIgnoreCase("1")) {
                     arrayException.clear();
                     JSONArray list = exceptionlist.optJSONArray("list");
 
-                   // list=new JSONArray();
+                    // list=new JSONArray();
 
                     for (int i = 0; i < list.length(); i++) {
                         JSONObject value = list.optJSONObject(i);
                         modelException = new ModelException();
                         modelException.setListValueWithoutIndex(value.optString("POD"));
-                        modelException.setListValue(value.optString("Job_SeqNo")+"-"+value.optString("Display_Name"));
+                        modelException.setListValue(value.optString("Job_SeqNo") + "-" + value.optString("Display_Name"));
                         modelException.setTypeOfException(value.optString("Stamp"));
                      /*  if(i==2){
                            modelException.setListID(value.optString("Job_SeqNo") + "@" +
@@ -2018,24 +2044,24 @@ public class PhotoUploadActivity extends Activity {
                                    "1"+ "@" +
                                    value.optString("Display_Name"));
                         }else {*/
-                            modelException.setListID(value.optString("Job_SeqNo") + "@" +
-                                    value.optString("Sign_Status") + "@" +
-                                    value.optString("Sign_URL") + "@" +
-                                    value.optString("Stamp_Status") + "@" +
-                                    value.optString("SignPad_Status") + "@" +
-                                    value.optString("Pod_Upload_Status")+ "@" +
-                                    value.optString("Display_Name")+ "@" +
-                                    value.optString("Pod_SeqNo"));
-                       //}
+                        modelException.setListID(value.optString("Job_SeqNo") + "@" +
+                                value.optString("Sign_Status") + "@" +
+                                value.optString("Sign_URL") + "@" +
+                                value.optString("Stamp_Status") + "@" +
+                                value.optString("SignPad_Status") + "@" +
+                                value.optString("Pod_Upload_Status") + "@" +
+                                value.optString("Display_Name") + "@" +
+                                value.optString("Pod_SeqNo"));
+                        //}
                         modelException.setpCode(value.optString("File_Type"));
                         arrayException.add(modelException);
                     }
 
-                    if(list.length()>0) {
+                    if (list.length() > 0) {
                         DialogueWithListException(arrayException, -2);
-                    }else{
-                        Toast.makeText(mContext,"POD Value Not available",Toast.LENGTH_SHORT).show();
-                        if(isDirectPOD){
+                    } else {
+                        Toast.makeText(mContext, "POD Value Not available", Toast.LENGTH_SHORT).show();
+                        if (isDirectPOD) {
                             activity.finish();
                         }
                     }
@@ -2202,7 +2228,7 @@ public class PhotoUploadActivity extends Activity {
         btn_phototype = dialoglist.findViewById(R.id.btn_phototype);
         btn_hawb_member = dialoglist.findViewById(R.id.btn_hawb_member);
 
-        if(isPONO){
+        if (isPONO) {
             btn_hawb_member.setText("PO NO");
         }
 
@@ -2261,7 +2287,7 @@ public class PhotoUploadActivity extends Activity {
                     return;
                 }
 
-                if(isPONO){
+                if (isPONO) {
                     if (btn_hawb_member.getText().toString().trim().equalsIgnoreCase("PO NO")) {
                         Utils.Alert("Select PO NO", mContext);
                         return;
@@ -2275,11 +2301,21 @@ public class PhotoUploadActivity extends Activity {
                 if (myflag == 0) {
 
 
-                        pickMultipleImages();
+                    pickMultipleImages();
 
-                                } else {
+                } else {
+
+                    com.github.dhaval2404.imagepicker.ImagePicker.with(PhotoUploadActivity.this)
+                            .compress(1024)
+                            .maxResultSize(1080, 1080)
+                            .cameraOnly()
+                            .start(PICK_IMAGE_ID);
+
+
+/*
                     Intent chooseImageIntent = ImagePicker.getPickImageIntent(mContext);
                     activity.startActivityForResult(chooseImageIntent, PICK_IMAGE_ID);
+*/
                     PHOTO_TYPE = 0;
 
                    /* Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -2306,12 +2342,12 @@ public class PhotoUploadActivity extends Activity {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         intent.setType("*/*");
-        startActivityForResult(Intent.createChooser(intent, "Choose a file"),786);
+        startActivityForResult(Intent.createChooser(intent, "Choose a file"), 786);
 
-       //  Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
-     //   chooseFile.setType("*/*");
-      //  chooseFile = Intent.createChooser(chooseFile, "Choose a file");
-      //  startActivityForResult(chooseFile, 101);
+        //  Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+        //   chooseFile.setType("*/*");
+        //  chooseFile = Intent.createChooser(chooseFile, "Choose a file");
+        //  startActivityForResult(chooseFile, 101);
 
     }
 
@@ -2328,7 +2364,7 @@ public class PhotoUploadActivity extends Activity {
         final ListView lv_resource = (ListView) dialoglist.findViewById(R.id.lv_resource);
         // set the custom dialog components - text, image and button
         ImageView img_close = (ImageView) dialoglist.findViewById(R.id.img_close);
-         ListCheckAdapter listCheckAdapter = null;
+        ListCheckAdapter listCheckAdapter = null;
 
         img_close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -2341,14 +2377,12 @@ public class PhotoUploadActivity extends Activity {
         relTop.setVisibility(View.INVISIBLE);
         Button btn_submit = dialoglist.findViewById(R.id.btn_submit);
 
-        if(flag!=-2){
+        if (flag != -2) {
             btn_submit.setVisibility(View.GONE);
-        }else{
-             relTop.setVisibility(View.GONE);
+        } else {
+            relTop.setVisibility(View.GONE);
             rel_selectall.setVisibility(View.VISIBLE);
         }
-
-
 
 
         final EditText etSearch = (EditText) dialoglist.findViewById(R.id.edt_search);
@@ -2358,25 +2392,25 @@ public class PhotoUploadActivity extends Activity {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int selectionCounter=0;
-                for(int i=0;i<exceptionlist.size();i++) {
+                int selectionCounter = 0;
+                for (int i = 0; i < exceptionlist.size(); i++) {
                     if (exceptionlist.get(i).isSelected()) {
 
                         selectionCounter++;
                     }
                 }
 
-                if(selectionCounter>1){
+                if (selectionCounter > 1) {
 
                     DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            switch (which){
+                            switch (which) {
                                 case DialogInterface.BUTTON_POSITIVE:
                                     //Yes button clicked
                                     dialog.dismiss();
                                     dialoglist.dismiss();
-                                    RedirectToPOD(exceptionlist,1);
+                                    RedirectToPOD(exceptionlist, 1);
 
                                     break;
 
@@ -2384,7 +2418,7 @@ public class PhotoUploadActivity extends Activity {
                                     //No button clicked
                                     dialog.dismiss();
                                     dialoglist.dismiss();
-                                    RedirectToPOD(exceptionlist,0);
+                                    RedirectToPOD(exceptionlist, 0);
                                     break;
                             }
                         }
@@ -2395,12 +2429,12 @@ public class PhotoUploadActivity extends Activity {
                     builder.setMessage("Do You want to apply All company chop & stamp to All DN?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
 
-                }else{
-                    if(selectionCounter==1) {
+                } else {
+                    if (selectionCounter == 1) {
                         RedirectToPOD(exceptionlist, 0);
                         dialoglist.dismiss();
-                    }else{
-                        Utils.Alert("Select Document",mContext);
+                    } else {
+                        Utils.Alert("Select Document", mContext);
                     }
                 }
 
@@ -2413,11 +2447,11 @@ public class PhotoUploadActivity extends Activity {
             values[i] = exceptionlistImplemented.get(i).getListValue();
         }
 
-        if(flag!=-2) {
+        if (flag != -2) {
             adapterException = new ArrayAdapter<String>(mContext,
                     R.layout.listtext, R.id.tv_title, values);
             lv_resource.setAdapter(adapterException);
-        }else {
+        } else {
             listCheckAdapter = new ListCheckAdapter(mContext, exceptionlist);
             lv_resource.setAdapter(listCheckAdapter);
         }
@@ -2427,16 +2461,16 @@ public class PhotoUploadActivity extends Activity {
         rel_selectall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean isSelected=false;
+                boolean isSelected = false;
 
-                if(exceptionlist.get(0).isSelected()){
-                    isSelected=true;
+                if (exceptionlist.get(0).isSelected()) {
+                    isSelected = true;
                 }
 
-                for(int i=0;i<exceptionlist.size();i++) {
-                    if(isSelected) {
+                for (int i = 0; i < exceptionlist.size(); i++) {
+                    if (isSelected) {
                         exceptionlist.get(i).setSelected(false);
-                    }else{
+                    } else {
                         exceptionlist.get(i).setSelected(true);
                     }
                 }
@@ -2463,12 +2497,10 @@ public class PhotoUploadActivity extends Activity {
                     STR_REV = exceptionlistImplemented.get(position).getListValue();
                     REMARK = etSearch.getText().toString().trim();
                     btn_phototype.setText(STR_REV);
-                }else if(flag==-2){
+                } else if (flag == -2) {
 
 
-
-                }
-                else {
+                } else {
                     btn_hawb_member.setText(exceptionlistImplemented.get(position).getListValue());
                 }
 
@@ -2480,112 +2512,111 @@ public class PhotoUploadActivity extends Activity {
     }
 
     private void RedirectToPOD(ArrayList<ModelException> exceptionlist, int pod_direct) {
-        String DocumentTitle="";
-        String File_Type="";
-        String Stamp="";
-        String DocumentURL="";
-        String Job_SeqNo="";
-        String Sign_Status="";
-        String Sign_URL="";
-        String Stamp_Status="";
-        String SignPad_Status="";
-        String Pod_Upload_Status="";
-        String Pod_SeqNo="";
+        String DocumentTitle = "";
+        String File_Type = "";
+        String Stamp = "";
+        String DocumentURL = "";
+        String Job_SeqNo = "";
+        String Sign_Status = "";
+        String Sign_URL = "";
+        String Stamp_Status = "";
+        String SignPad_Status = "";
+        String Pod_Upload_Status = "";
+        String Pod_SeqNo = "";
 
-        for(int i=0;i<exceptionlist.size();i++){
-            if(exceptionlist.get(i).isSelected()){
+        for (int i = 0; i < exceptionlist.size(); i++) {
+            if (exceptionlist.get(i).isSelected()) {
 
 
-
-                if(DocumentURL.length()==0){
-                    DocumentURL=exceptionlist.get(i).getListValueWithoutIndex();
-                }else{
-                    DocumentURL=DocumentURL+"##"+exceptionlist.get(i).getListValueWithoutIndex();
+                if (DocumentURL.length() == 0) {
+                    DocumentURL = exceptionlist.get(i).getListValueWithoutIndex();
+                } else {
+                    DocumentURL = DocumentURL + "##" + exceptionlist.get(i).getListValueWithoutIndex();
                 }
 
-                if(File_Type.length()==0){
-                    File_Type=exceptionlist.get(i).getpCode();
-                }else{
-                    File_Type=File_Type+"##"+exceptionlist.get(i).getpCode();
+                if (File_Type.length() == 0) {
+                    File_Type = exceptionlist.get(i).getpCode();
+                } else {
+                    File_Type = File_Type + "##" + exceptionlist.get(i).getpCode();
                 }
 
-                if(Stamp.length()==0){
-                    Stamp=exceptionlist.get(i).getTypeOfException();
-                }else{
-                    Stamp=Stamp+"##"+exceptionlist.get(i).getTypeOfException();
+                if (Stamp.length() == 0) {
+                    Stamp = exceptionlist.get(i).getTypeOfException();
+                } else {
+                    Stamp = Stamp + "##" + exceptionlist.get(i).getTypeOfException();
                 }
 
-                String[] array=exceptionlist.get(i).getListID().split("@");
+                String[] array = exceptionlist.get(i).getListID().split("@");
 
 
-                if(Job_SeqNo.length()==0){
-                    Job_SeqNo=array[0];
-                }else{
-                    Job_SeqNo=Job_SeqNo+"##"+array[0];
+                if (Job_SeqNo.length() == 0) {
+                    Job_SeqNo = array[0];
+                } else {
+                    Job_SeqNo = Job_SeqNo + "##" + array[0];
                 }
 
-                if(Sign_Status.length()==0){
-                    Sign_Status=array[1];
-                }else{
-                    Sign_Status=Sign_Status+"##"+array[1];
+                if (Sign_Status.length() == 0) {
+                    Sign_Status = array[1];
+                } else {
+                    Sign_Status = Sign_Status + "##" + array[1];
                 }
 
-                if(Sign_URL.length()==0){
-                    Sign_URL=array[2];
-                }else{
-                    Sign_URL=Sign_URL+"##"+array[2];
-                }
-
-
-                if(Stamp_Status.length()==0){
-                    Stamp_Status=array[3];
-                }else{
-                    Stamp_Status=Stamp_Status+"##"+array[3];
+                if (Sign_URL.length() == 0) {
+                    Sign_URL = array[2];
+                } else {
+                    Sign_URL = Sign_URL + "##" + array[2];
                 }
 
 
-                if(SignPad_Status.length()==0){
-                    SignPad_Status=array[4];
-                }else{
-                    SignPad_Status=SignPad_Status+"##"+array[4];
+                if (Stamp_Status.length() == 0) {
+                    Stamp_Status = array[3];
+                } else {
+                    Stamp_Status = Stamp_Status + "##" + array[3];
                 }
 
-                if(Pod_Upload_Status.length()==0){
-                    Pod_Upload_Status=array[5];
-                }else{
-                    Pod_Upload_Status=Pod_Upload_Status+"##"+array[5];
+
+                if (SignPad_Status.length() == 0) {
+                    SignPad_Status = array[4];
+                } else {
+                    SignPad_Status = SignPad_Status + "##" + array[4];
                 }
 
-                if(DocumentTitle.length()==0){
-                    DocumentTitle=array[6];
-                }else{
-                    DocumentTitle=DocumentTitle+"##"+array[6];
+                if (Pod_Upload_Status.length() == 0) {
+                    Pod_Upload_Status = array[5];
+                } else {
+                    Pod_Upload_Status = Pod_Upload_Status + "##" + array[5];
                 }
 
-                if(Pod_SeqNo.length()==0){
-                    Pod_SeqNo=array[7];
-                }else{
-                    Pod_SeqNo=Pod_SeqNo+"_"+array[7];
+                if (DocumentTitle.length() == 0) {
+                    DocumentTitle = array[6];
+                } else {
+                    DocumentTitle = DocumentTitle + "##" + array[6];
+                }
+
+                if (Pod_SeqNo.length() == 0) {
+                    Pod_SeqNo = array[7];
+                } else {
+                    Pod_SeqNo = Pod_SeqNo + "_" + array[7];
                 }
 
 
             }
         }
 
-        Intent intent=new Intent(mContext,PODActivity.class);
+        Intent intent = new Intent(mContext, PODActivity.class);
 
-        intent.putExtra("DocumentTitle",DocumentTitle);
-        intent.putExtra("DocumentURL",DocumentURL);
-        intent.putExtra("Stamp",Stamp);
-        intent.putExtra("Job_SeqNo",Job_SeqNo);
-        intent.putExtra("Sign_Status",Sign_Status);
-        intent.putExtra("Stamp_Status",Stamp_Status);
-        intent.putExtra("Pod_Upload_Status",Pod_Upload_Status);
-        intent.putExtra("SignPad_Status",SignPad_Status);
-        intent.putExtra("Pod_SeqNo",Pod_SeqNo);
-        intent.putExtra("Sign_URL",Sign_URL);
-        intent.putExtra("POD_DIRECT",pod_direct);
-        intent.putExtra("File_Type",File_Type);
+        intent.putExtra("DocumentTitle", DocumentTitle);
+        intent.putExtra("DocumentURL", DocumentURL);
+        intent.putExtra("Stamp", Stamp);
+        intent.putExtra("Job_SeqNo", Job_SeqNo);
+        intent.putExtra("Sign_Status", Sign_Status);
+        intent.putExtra("Stamp_Status", Stamp_Status);
+        intent.putExtra("Pod_Upload_Status", Pod_Upload_Status);
+        intent.putExtra("SignPad_Status", SignPad_Status);
+        intent.putExtra("Pod_SeqNo", Pod_SeqNo);
+        intent.putExtra("Sign_URL", Sign_URL);
+        intent.putExtra("POD_DIRECT", pod_direct);
+        intent.putExtra("File_Type", File_Type);
         activity.startActivity(intent);
         activity.finish();
 
@@ -2596,10 +2627,11 @@ public class PhotoUploadActivity extends Activity {
         Context context;
         LayoutInflater layoutInflater;
         ArrayList<ModelException> exceptionlist;
+
         public ListCheckAdapter(Context _context, ArrayList<ModelException> _exceptionlist) {
             super();
             this.context = _context;
-            this.exceptionlist=_exceptionlist;
+            this.exceptionlist = _exceptionlist;
             layoutInflater = LayoutInflater.from(context);
         }
 
@@ -2630,7 +2662,7 @@ public class PhotoUploadActivity extends Activity {
                 v = layoutInflater.inflate(R.layout.listtext_checkbox, null);
                 h = new ViewHolder();
                 h.tv_title = (TextView) v.findViewById(R.id.tv_title);
-                h.rel_main=(RelativeLayout)v.findViewById(R.id.rel_main);
+                h.rel_main = (RelativeLayout) v.findViewById(R.id.rel_main);
 
 
                 h.img_select_worksite = (ImageView) v.findViewById(R.id.img_select_worksite);
@@ -2640,10 +2672,10 @@ public class PhotoUploadActivity extends Activity {
                 } else {
                     h.img_select_worksite.setVisibility(View.GONE);
                 }
-                String[] array=exceptionlist.get(position).getListID().split("@");
-                if(array[5].equalsIgnoreCase("1")){
+                String[] array = exceptionlist.get(position).getListID().split("@");
+                if (array[5].equalsIgnoreCase("1")) {
                     h.rel_main.setBackgroundColor(mContext.getResources().getColor(R.color.md_grey_700));
-                }else{
+                } else {
                     h.rel_main.setBackgroundColor(mContext.getResources().getColor(R.color.colorOrange));
                 }
 
@@ -2651,9 +2683,9 @@ public class PhotoUploadActivity extends Activity {
                 h.rel_main.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(exceptionlist.get(position).isSelected()){
+                        if (exceptionlist.get(position).isSelected()) {
                             exceptionlist.get(position).setSelected(false);
-                        }else{
+                        } else {
                             exceptionlist.get(position).setSelected(true);
                         }
 
@@ -2671,19 +2703,19 @@ public class PhotoUploadActivity extends Activity {
                     h.img_select_worksite.setVisibility(View.GONE);
                 }
 
-                String[] array=exceptionlist.get(position).getListID().split("@");
-                if(array[5].equalsIgnoreCase("1")){
+                String[] array = exceptionlist.get(position).getListID().split("@");
+                if (array[5].equalsIgnoreCase("1")) {
                     h.rel_main.setBackgroundColor(mContext.getResources().getColor(R.color.md_grey_700));
-                }else{
+                } else {
                     h.rel_main.setBackgroundColor(mContext.getResources().getColor(R.color.colorOrange));
                 }
 
                 h.rel_main.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(exceptionlist.get(position).isSelected()){
+                        if (exceptionlist.get(position).isSelected()) {
                             exceptionlist.get(position).setSelected(false);
-                        }else{
+                        } else {
                             exceptionlist.get(position).setSelected(true);
                         }
 
@@ -2703,8 +2735,6 @@ public class PhotoUploadActivity extends Activity {
     }
 
 
-
-
     private void getRevList(String address, String lat, String lng, String gpsStatus) {
         String _driverId = Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext);
         String IMEINumber = Utils.getPref(mContext.getResources().getString(R.string.pref_IMEINumber), mContext);
@@ -2716,7 +2746,7 @@ public class PhotoUploadActivity extends Activity {
         String _driverId = Utils.getPref(mContext.getResources().getString(R.string.pref_driverID), mContext);
         String IMEINumber = Utils.getPref(mContext.getResources().getString(R.string.pref_IMEINumber), mContext);
         String ClientID = Utils.getPref(mContext.getResources().getString(R.string.pref_Client_ID), mContext);
-        APIUtils.sendRequest(mContext, "POD Data", "Misc_List.jsp?Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_DriverID=" + _driverId + "&Str_Event=" + "PODLIST"+ "&Str_JobNo=" + Str_JobNo, "podList");
+        APIUtils.sendRequest(mContext, "POD Data", "Misc_List.jsp?Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_DriverID=" + _driverId + "&Str_Event=" + "PODLIST" + "&Str_JobNo=" + Str_JobNo, "podList");
     }
 
     private void getHAWBList(String address, String lat, String lng, String gpsStatus) {
@@ -2724,6 +2754,6 @@ public class PhotoUploadActivity extends Activity {
         String IMEINumber = Utils.getPref(mContext.getResources().getString(R.string.pref_IMEINumber), mContext);
         String ClientID = Utils.getPref(mContext.getResources().getString(R.string.pref_Client_ID), mContext);
         // Toast.makeText(mContext,"2",Toast.LENGTH_SHORT).show();
-        APIUtils.sendRequest(mContext, "HAWB List", "Order_List.jsp?Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus +"&Str_JobStatus=" + STR_REV + "&Str_DriverID=" + driverId + "&Str_JobView=Gallery&Str_JobStatus=HAWB&Str_TripNo=NA&Str_JobNo=" + Str_JobNo + "&Str_JobFor=" + Utils.getPref(mContext.getString(R.string.pref_Client_Name), mContext), "HAWBList");
+        APIUtils.sendRequest(mContext, "HAWB List", "Order_List.jsp?Str_iMeiNo=" + IMEINumber + "&Str_Model=Android&Str_ID=" + ClientID + "&Str_Lat=" + lat + "&Str_Long=" + lng + "&Str_Loc=" + address + "&Str_GPS=" + gpsStatus + "&Str_JobStatus=" + STR_REV + "&Str_DriverID=" + driverId + "&Str_JobView=Gallery&Str_JobStatus=HAWB&Str_TripNo=NA&Str_JobNo=" + Str_JobNo + "&Str_JobFor=" + Utils.getPref(mContext.getString(R.string.pref_Client_Name), mContext), "HAWBList");
     }
 }
